@@ -47,7 +47,7 @@ jobs:
 
         steps:
             - name: Harden Runner
-              uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+              uses: step-security/harden-runner@c6295a65d1254861815972266d5933fd6e532bdf # v2.11.1
               with:
                 egress-policy: audit
 
@@ -73,7 +73,7 @@ jobs:
               uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
 
             - name: Install cross
-              uses: taiki-e/install-action@daa3c1f1f9a9d46f686d9fc2f65773d0c293688b # v2.49.40
+              uses: taiki-e/install-action@575f713d0233afba556737a7b85080563be14186 # v2.49.43
               with:
                 tool: cross
 
@@ -124,7 +124,7 @@ jobs:
 
         steps:
             - name: Harden Runner
-              uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+              uses: step-security/harden-runner@c6295a65d1254861815972266d5933fd6e532bdf # v2.11.1
               with:
                 egress-policy: audit
 
@@ -154,7 +154,7 @@ jobs:
               run: sudo apt install tree
 
             - name: Install semantic-release-cargo
-              uses: taiki-e/install-action@daa3c1f1f9a9d46f686d9fc2f65773d0c293688b # v2.49.40
+              uses: taiki-e/install-action@575f713d0233afba556737a7b85080563be14186 # v2.49.43
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
 
