@@ -52,7 +52,7 @@ strip = "symbols" # Strip debug symbols
 
 [dev-dependencies]
 assert_cmd = "=2.0.17"
-criterion = { version = "=0.5.1", features = [
+criterion = { version = "=0.6.0", features = [
   "html_reports",
   "csv",
   "csv_output",
