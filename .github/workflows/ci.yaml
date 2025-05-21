@@ -31,7 +31,7 @@ jobs:
             book_changed: ${{steps.changed_dirs.outputs.book}}
         steps:
             - name: Harden Runner
-              uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+              uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
               with:
                 disable-sudo: true
                 egress-policy: block
@@ -93,7 +93,7 @@ jobs:
                       label: nightly
         steps:
             - name: Harden Runner
-              uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+              uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
               with:
                 disable-sudo: true
                 egress-policy: block
@@ -110,14 +110,14 @@ jobs:
 
             - name: Install Rust
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-              uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # master
+              uses: dtolnay/rust-toolchain@b3b07ba8b418998c39fb20f53e8b695cdcc8de1b # master
               with:
                 toolchain: ${{matrix.rust}}
                 components: rustfmt, clippy
 
             - name: Install nightly Rust
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-              uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # nightly
+              uses: dtolnay/rust-toolchain@b3b07ba8b418998c39fb20f53e8b695cdcc8de1b # nightly
               with:
                 toolchain: nightly
                 components: rustfmt, clippy
@@ -144,7 +144,7 @@ jobs:
 
             - name: Wait before badge creation
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-              uses: AliSajid/random-wait-action@61cd084eea9edc3700d94b6c8e1bf28291f0a177 # v2.9.0
+              uses: AliSajid/random-wait-action@cd6450856f807a0b8e50d872f4c80f09249ffe59 # v2.11.0
               with:
                 minimum: ${{env.MINIMUM_WAIT}}
                 maximum: ${{env.MAXIMUM_WAIT}}

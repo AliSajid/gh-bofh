@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2023 - 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+[tools]
+"cargo:cargo-llvm-cov" = "0.6.16"
+"cargo:cargo-nextest" = "0.9.87"
+
+[tasks.coverage]
+description = "Generate test coverage information"
+run = [
+    "cargo llvm-cov --no-report nextest --config-file nextest.toml",
+    "cargo llvm-cov --no-report --doc",
+    "cargo llvm-cov report --doctests --lcov --output-path lcov.info",
+]

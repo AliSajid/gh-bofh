@@ -47,7 +47,7 @@ jobs:
 
         steps:
             - name: Harden Runner
-              uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+              uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
               with:
                 egress-policy: audit
 
@@ -63,7 +63,7 @@ jobs:
               run: sudo apt install musl-tools mingw-w64
 
             - name: Install Rust toolchain
-              uses: dtolnay/rust-toolchain@56f84321dbccf38fb67ce29ab63e4754056677e0 # master
+              uses: dtolnay/rust-toolchain@b3b07ba8b418998c39fb20f53e8b695cdcc8de1b # master
               id: rust-toolchain
               with:
                 toolchain: stable
@@ -73,7 +73,7 @@ jobs:
               uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
 
             - name: Install cross
-              uses: taiki-e/install-action@a433d87f121760c7447ab86390794f9a2dce31cf # v2.49.33
+              uses: taiki-e/install-action@941e8a4d9d7cdb696bd4f017cf54aca281f8ffff # v2.51.2
               with:
                 tool: cross
 
@@ -124,7 +124,7 @@ jobs:
 
         steps:
             - name: Harden Runner
-              uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+              uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
               with:
                 egress-policy: audit
 
@@ -135,7 +135,7 @@ jobs:
                 persist-credentials: false
 
             - name: Import GPG key
-              uses: crazy-max/ghaction-import-gpg@cb9bde2e2525e640591a934b1fd28eef1dcaf5e5 # v6.2.0
+              uses: crazy-max/ghaction-import-gpg@e89d40939c28e39f97cf32126055eeae86ba74ec # v6.3.0
               with:
                 gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
                 passphrase: ${{ secrets.GPG_KEY_PASSPHRASE }}
@@ -154,12 +154,12 @@ jobs:
               run: sudo apt install tree
 
             - name: Install semantic-release-cargo
-              uses: taiki-e/install-action@a433d87f121760c7447ab86390794f9a2dce31cf # v2.49.33
+              uses: taiki-e/install-action@941e8a4d9d7cdb696bd4f017cf54aca281f8ffff # v2.51.2
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
 
             - name: Download release artifacts
-              uses: actions/download-artifact@95815c38cf2ff2164869cbab79da8d1f422bc89e # v4.2.1
+              uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
               with:
                 path: artifacts
 
@@ -171,7 +171,7 @@ jobs:
 
             - name: Attest build provenance
               id: attestation
-              uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517141b2 # v2.2.3
+              uses: actions/attest-build-provenance@db473fddc028af60658334401dc6fa3ffd8669fd # v2.3.0
               with:
                 subject-path: |
                     dist/gh-bofh*

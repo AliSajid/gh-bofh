@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Ali Sajid Imami
+# SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
 #
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-License-Identifier: MIT
@@ -29,6 +29,8 @@ command = [
     "clippy",
     "--color",
     "always",
+    "--all-targets",
+    "--all-features",
     "--",
     "-W",
     "clippy::pedantic",
@@ -38,6 +40,9 @@ command = [
     "clippy::unwrap_used",
     "-W",
     "clippy::expect_used",
+    "-D",
+    "warnings",
+
 ]
 need_stdout = false
 apply_gitignore = false
@@ -52,7 +57,7 @@ command = [
     "test",
     "--",
     "--color",
-    "always", # https://github.com/Canop/bacon/issues/124
+    "always",  # https://github.com/Canop/bacon/issues/124
 ]
 need_stdout = true
 
@@ -66,7 +71,7 @@ on_success = "back"
 [jobs.doc-open]
 command = ["cargo", "doc", "--color", "always", "--no-deps", "--open"]
 need_stdout = false
-on_success = "back" # so that we don't open the browser at each change
+on_success = "back"                                                    # so that we don't open the browser at each change
 
 # Audit your dependencies for security vulnerabilities
 [jobs.audit]
