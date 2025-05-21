@@ -14,26 +14,28 @@
 //! - Verifying that the generated excuses are unique up to a certain limit.
 //! - Checking that all generated excuses are part of the predefined `CLASSIC`
 //!   set.
+#[cfg(test)]
+mod tests {
+    use std::collections::HashSet;
 
-use std::collections::HashSet;
+    use gh_bofh_lib::{
+        random_classic,
+        CLASSIC,
+    };
 
-use gh_bofh_lib::{
-    random_classic,
-    CLASSIC,
-};
+    #[test]
+    fn test_common_excuses() {
+        let mut excuses = HashSet::new();
+        for _ in 0..500 {
+            let excuse = random_classic();
+            assert!(!excuse.is_empty());
+            assert_ne!(excuse, "No excuse found, try again later");
+            excuses.insert(excuse);
+        }
 
-#[test]
-fn test_common_excuses() {
-    let mut excuses = HashSet::new();
-    for _ in 0..500 {
-        let excuse = random_classic();
-        assert!(!excuse.is_empty());
-        assert_ne!(excuse, "No excuse found, try again later");
-        excuses.insert(excuse);
+        assert!(excuses.len() > 1);
+        assert!(excuses.len() <= 467);
+
+        assert!(excuses.iter().all(|excuse| CLASSIC.contains(excuse)));
     }
-
-    assert!(excuses.len() > 1);
-    assert!(excuses.len() <= 467);
-
-    assert!(excuses.iter().all(|excuse| CLASSIC.contains(excuse)));
 }
