@@ -93,6 +93,7 @@ pub struct Cli {
 }
 
 #[cfg(test)]
+#[allow(clippy::unwrap_used)]
 mod tests {
     use sealed_test::prelude::*;
 
