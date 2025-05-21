@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2023 - 2025 Ali Sajid Imami
+SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
 
 SPDX-License-Identifier: Apache-2.0
 SPDX-License-Identifier: MIT
@@ -26,7 +26,7 @@ SPDX-License-Identifier: MIT
 [![Libraries.io SourceRank](https://img.shields.io/librariesio/sourcerank/cargo/gh-bofh)](https://libraries.io/cargo/gh-bofh)
 [![ClearlyDefined Score](https://img.shields.io/clearlydefined/score/crate/cratesio/-/gh-bofh/1.2.0-next.1)](https://clearlydefined.io/definitions/crate/cratesio/-/gh-bofh/1.2.0-next.1)
 
-Generate a BOFH Excuse for github-cli from the commandline as a `gh` extension.
+Generate a BOFH Excuse for github-cli from the command line as a `gh` extension.
 
 ## Builds
 
@@ -48,7 +48,7 @@ cargo install gh-bofh
 
 ### From Release
 
-Download the latest release from [here](https://github.com/AliSajid/gh-bofh/releases/latest) and install it using `gh extension install <path-to-release>`
+[Download the latest release from here](https://github.com/AliSajid/gh-bofh/releases/latest) and install it using `gh extension install <path-to-release>`
 
 ### From The GitHub CLI
 
