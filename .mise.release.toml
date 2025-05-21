@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2023 - 2024 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+[tools]
+"cargo:cross" = "0.2.5"
+"cargo:semantic-release-cargo" = "2.4.0"
+node = "22.13.0"
+"npm:conventional-changelog-conventionalcommits" = "8.0.0"
+"npm:semantic-release" = "24.2.1"
+"npm:semantic-release-export-data" = "1.1.0"
