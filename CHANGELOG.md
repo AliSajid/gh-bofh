@@ -1,3 +1,10 @@
+# [1.4.0-next.5](https://github.com/AliSajid/gh-bofh/compare/v1.4.0-next.4...v1.4.0-next.5) (2025-07-31)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate rand to v0.9.2 ([1873d7a](https://github.com/AliSajid/gh-bofh/commit/1873d7abbe6d797687abd7218f76c9dde2aedfed))
+
 # [1.4.0-next.4](https://github.com/AliSajid/gh-bofh/compare/v1.4.0-next.3...v1.4.0-next.4) (2025-07-12)
 
 
