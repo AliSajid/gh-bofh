@@ -321,7 +321,7 @@ dependencies = [
 
 [[package]]
 name = "gh-bofh"
-version = "1.4.0-next.6"
+version = "1.4.0-next.7"
 dependencies = [
  "assert_cmd",
  "clap",
