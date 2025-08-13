@@ -40,7 +40,7 @@ jobs:
                     api.github.com:443
 
             - name: Checkout Repository
-              uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+              uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
             - name: Check changed directories
               id: changed_dirs
@@ -106,7 +106,7 @@ jobs:
                     static.crates.io:443
 
             - name: Checkout Repository
-              uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+              uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
             - name: Install Rust
               if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
