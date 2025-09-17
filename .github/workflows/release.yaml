@@ -63,7 +63,7 @@ jobs:
               run: sudo apt install musl-tools mingw-w64
 
             - name: Install Rust toolchain
-              uses: dtolnay/rust-toolchain@e97e2d8cc328f1b50210efc529dca0028893a2d9 # master
+              uses: dtolnay/rust-toolchain@6d653acede28d24f02e3cd41383119e8b1b35921 # master
               id: rust-toolchain
               with:
                 toolchain: stable
@@ -73,7 +73,7 @@ jobs:
               uses: Swatinem/rust-cache@98c8021b550208e191a6a3145459bfc9fb29c4c0 # v2.8.0
 
             - name: Install cross
-              uses: taiki-e/install-action@e5f8d33e7166e0491b2ab4ff0567cc6cd6772737 # v2.61.7
+              uses: taiki-e/install-action@2fdc5fd6ac805b0f8256893bd4c807bcb666af00 # v2.61.8
               with:
                 tool: cross
 
@@ -154,7 +154,7 @@ jobs:
               run: sudo apt install tree
 
             - name: Install semantic-release-cargo
-              uses: taiki-e/install-action@e5f8d33e7166e0491b2ab4ff0567cc6cd6772737 # v2.61.7
+              uses: taiki-e/install-action@2fdc5fd6ac805b0f8256893bd4c807bcb666af00 # v2.61.8
               with:
                 tool: semantic-release-cargo@${{env.SEMREL_RUST_VERSION}}
 
