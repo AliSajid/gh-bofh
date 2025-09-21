@@ -1,3 +1,10 @@
+# [1.4.0-next.9](https://github.com/AliSajid/gh-bofh/compare/v1.4.0-next.8...v1.4.0-next.9) (2025-09-21)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate clap to v4.5.48 ([61dcc66](https://github.com/AliSajid/gh-bofh/commit/61dcc66707f2f4adeab37c945257f1f99612d2aa))
+
 # [1.4.0-next.8](https://github.com/AliSajid/gh-bofh/compare/v1.4.0-next.7...v1.4.0-next.8) (2025-09-07)
 
 
