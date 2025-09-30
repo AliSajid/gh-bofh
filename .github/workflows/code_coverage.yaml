@@ -28,7 +28,7 @@ jobs:
                 components: llvm-tools-preview
 
             - name: Install necessary tools
-              uses: taiki-e/install-action@5ab30948b991e8d6aa5a6c1e33c6aea130c6de65 # v2.62.12
+              uses: taiki-e/install-action@3216b6964cbfe053bb8b9a2ef245bd9300e2061d # v2.62.14
               with:
                 tool: cargo-llvm-cov,nextest,cargo-tarpaulin
 
