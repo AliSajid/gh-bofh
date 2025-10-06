@@ -11,7 +11,7 @@ jobs:
         name: Generate Coverage
         runs-on: ubuntu-latest
         container:
-            image: xd009642/tarpaulin:develop-nightly@sha256:05234862a35b58eb354ca796b94f7b6c04c6123e366ef6856700c1774dafe79f
+            image: xd009642/tarpaulin:develop-nightly@sha256:c4297d8fc17384a117849d8eb66d57ad802f9e93926be710f320c204097d28b1
             options: --security-opt seccomp=unconfined
 
         steps:
@@ -28,7 +28,7 @@ jobs:
                 components: llvm-tools-preview
 
             - name: Install necessary tools
-              uses: taiki-e/install-action@9f532f95f296500f5b271915a729663dcb585f98 # v2.62.19
+              uses: taiki-e/install-action@f355b1dcaf1a1c56ccead97cc540a259faf4bd5a # v2.62.20
               with:
                 tool: cargo-llvm-cov,nextest,cargo-tarpaulin
 
