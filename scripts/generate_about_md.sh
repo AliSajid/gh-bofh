@@ -19,43 +19,37 @@
 
 ## Step 1: Check that rustc and cargo are installed
 
-if ! command -v rustc &> /dev/null
-then
+if ! command -v rustc &>/dev/null; then
     echo "rustc could not be found"
     exit
 fi
 
-if ! command -v cargo &> /dev/null
-then
+if ! command -v cargo &>/dev/null; then
     echo "cargo could not be found"
     exit
 fi
 
 ## Step 2: Check that cargo-about is installed
 
-if ! command -v cargo-about &> /dev/null
-then
+if ! command -v cargo-about &>/dev/null; then
     echo "cargo-about could not be found"
     exit
 fi
 
-if ! command -v dos2unix &> /dev/null
-then
+if ! command -v dos2unix &>/dev/null; then
     echo "dos2unix could not be found"
     exit
 fi
 
 ## Step 3: Generate the html file
 
-if [ -z "$1" ]
-then
+if [ -z "$1" ]; then
     echo "No template file was given"
     exit 1
 fi
 
-if [ -z "$2" ]
-then
-    cargo about generate --format handlebars "$1" | gexpand -t 4 | dos2unix > licenses_report.md
+if [ -z "$2" ]; then
+    cargo about generate --format handlebars --frozen --offline "$1" | gexpand -t 4 | dos2unix >licenses_report.md
 else
-    cargo about generate --format handlebars  "$1" | gexpand -t 4 | dos2unix > "$2"
+    cargo about generate --format handlebars --frozen --offline "$1" | gexpand -t 4 | dos2unix >"$2"
 fi

@@ -7311,7 +7311,7 @@
                 ],
                 "description": "A Rust implementation of the classic `bofh` command as a GitHub CLI extension.",
                 "documentation": null,
-                "edition": "2021",
+                "edition": "2024",
                 "features": {},
                 "homepage": null,
                 "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh#1.4.0-next.9",
@@ -7324,7 +7324,7 @@
                 "publish": null,
                 "readme": "README.md",
                 "repository": "https://github.com/AliSajid/gh-bofh",
-                "rust_version": "1.74.1",
+                "rust_version": "1.85.1",
                 "source": null,
                 "targets": [
                     {
@@ -7333,7 +7333,7 @@
                         ],
                         "doc": true,
                         "doctest": true,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "lib"
                         ],
@@ -7348,7 +7348,7 @@
                         ],
                         "doc": true,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "bin"
                         ],
@@ -7363,7 +7363,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "test"
                         ],
@@ -7378,7 +7378,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "test"
                         ],
@@ -7393,7 +7393,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "test"
                         ],
@@ -7408,7 +7408,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "test"
                         ],
@@ -7423,7 +7423,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "bench"
                         ],
@@ -31375,7 +31375,7 @@
                         ],
                         "description": "A Rust implementation of the classic `bofh` command as a GitHub CLI extension.",
                         "documentation": null,
-                        "edition": "2021",
+                        "edition": "2024",
                         "features": {},
                         "homepage": null,
                         "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh#1.4.0-next.9",
@@ -31388,7 +31388,7 @@
                         "publish": null,
                         "readme": "README.md",
                         "repository": "https://github.com/AliSajid/gh-bofh",
-                        "rust_version": "1.74.1",
+                        "rust_version": "1.85.1",
                         "source": null,
                         "targets": [
                             {
@@ -31397,7 +31397,7 @@
                                 ],
                                 "doc": true,
                                 "doctest": true,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "lib"
                                 ],
@@ -31412,7 +31412,7 @@
                                 ],
                                 "doc": true,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "bin"
                                 ],
@@ -31427,7 +31427,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "test"
                                 ],
@@ -31442,7 +31442,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "test"
                                 ],
@@ -31457,7 +31457,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "test"
                                 ],
@@ -31472,7 +31472,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "test"
                                 ],
@@ -31487,7 +31487,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "bench"
                                 ],
