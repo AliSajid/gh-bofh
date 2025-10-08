@@ -129,6 +129,9 @@ mod tests {
     #[test]
     fn test_random_modern() {
         let excuse: ModernExcuse = random_modern();
-        assert_ne!(excuse, "Excuse engine not initialized");
+        assert_ne!(
+            excuse,
+            "Excuse engine not initialized. Please try again later."
+        );
     }
 }
