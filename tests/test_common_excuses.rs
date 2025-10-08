@@ -19,8 +19,8 @@ mod tests {
     use std::collections::HashSet;
 
     use gh_bofh_lib::{
-        random_classic,
         CLASSIC,
+        random_classic,
     };
 
     #[test]
