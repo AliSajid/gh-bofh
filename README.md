@@ -22,6 +22,7 @@ SPDX-License-Identifier: MIT
 [![Crates.io License](https://img.shields.io/crates/l/gh-bofh)](https://crates.io/crates/gh-bofh)
 [![REUSE Compliance](https://img.shields.io/reuse/compliance/github.com%2FAliSajid%2Fgh-bofh)](https://api.reuse.software/info/github.com/AliSajid/gh-bofh)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9466/badge)](https://www.bestpractices.dev/projects/9466)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/AliSajid/gh-bofh/badge)](https://scorecard.dev/viewer/?uri=github.com/AliSajid/gh-bofh)
 
 [![Libraries.io SourceRank](https://img.shields.io/librariesio/sourcerank/cargo/gh-bofh)](https://libraries.io/cargo/gh-bofh)
 [![ClearlyDefined Score](https://img.shields.io/clearlydefined/score/crate/cratesio/-/gh-bofh/1.2.0-next.1)](https://clearlydefined.io/definitions/crate/cratesio/-/gh-bofh/1.2.0-next.1)
