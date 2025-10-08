@@ -95,11 +95,15 @@ The `gh-bofh` project addresses common implementation security weaknesses as fol
 
 The `gh-bofh` project meets its security requirements by adhering to secure design principles, minimizing its attack surface, and countering common implementation security weaknesses. The threat model is simple due to the software's limited scope, and trust boundaries are clearly defined. The use of memory-safe languages, minimal dependencies, and open-source transparency further strengthens the security of the project.
 
----
 
 ## **6. Evidence**
 
 The following artifacts and repository configuration provide concrete evidence supporting the assurance claims above. All references below point to files and workflows present in the project repository.
+
+Related documents:
+
+- `SECURITY.md` — reporting and disclosure process.
+- `SECURITY_REQUIREMENTS.md` — security requirements and expectations.
 
 - Continuous Integration: `.github/workflows/ci.yaml` — the CI workflow builds and tests the project across multiple Rust toolchains and platforms, runs formatting and lint checks, and gates releases on successful CI.
 - Toolchain and policy: `Cargo.toml` — lists the project Rust MSRV (`rust-version = "1.74.1"`), dependencies (`clap`, `rand`), and lint rules (forbid `unsafe_code`, deny certain rustdoc errors) which demonstrate intentional safety posture.
@@ -190,3 +194,46 @@ cargo audit --file Cargo.lock
 ```
 
 Include the output or a short summary in the related issue or PR when addressing a finding so reviewers can confirm the verification step was completed.
+
+Cargo-audit guidance
+
+
+The project uses `cargo-audit` as the primary tool to detect known vulnerable dependency versions. The guidance below covers installation, running the audit, interpreting results, and recommended actions when an advisory is reported.
+
+Installation
+
+```bash
+# install cargo-audit (requires Rust and cargo)
+cargo install cargo-audit
+```
+
+Run an audit
+
+```bash
+# basic audit using the repository lockfile
+cargo audit --file Cargo.lock
+
+# produce a JSON report for automation
+cargo audit --file Cargo.lock --json > cargo-audit-report.json
+```
+
+Interpreting results
+
+- `cargo-audit` checks `Cargo.lock` against the RustSec advisory database and reports advisories with severity and CVE references (when available).
+- A typical report lists the vulnerable crate, advisory ID, version ranges affected, and suggested remediation (upgrade to a fixed version or apply a patch).
+
+Recommended actions on findings
+
+1. If an advisory indicates a direct dependency is vulnerable, update the `Cargo.toml` to a safe version and run `cargo update -p <crate>` to update `Cargo.lock`. Open a PR with the change and include the audit report.
+2. If the issue is in a transitive dependency, prefer to update the dependent direct crate to a version that pulls a safe transitive version. If no fix is available, consider raising an issue with the upstream project or applying a temporary patch (with caution).
+3. For high/critical advisories treat remediation as urgent; include the audit report in the issue and reference the advisory IDs.
+
+Recording and communicating results
+
+- Attach the `cargo-audit` output (text or JSON) to the related issue or PR so reviewers can confirm the finding and remediation.
+- For automated workflows, include the JSON report in CI artifacts when available and link it from the release notes or security issue.
+
+Notes
+
+- `cargo-audit` relies on the RustSec advisory database; it does not detect zero-day or unpublished vulnerabilities. Use it regularly as part of dependency hygiene.
+- Consider running `cargo-audit` locally before creating dependency changes and include the report as part of the PR description.
