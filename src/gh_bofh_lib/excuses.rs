@@ -1,4 +1,3 @@
-// Copyright (c) 2024
 // SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
 //
 // SPDX-License-Identifier: Apache-2.0
