@@ -1,3 +1,20 @@
+## [1.4.1](https://github.com/AliSajid/gh-bofh/compare/v1.4.0...v1.4.1) (2025-10-08)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate clap to v4.5.39 ([2fd5121](https://github.com/AliSajid/gh-bofh/commit/2fd5121aa0fd9e617a0ef16c2f478b4f45934836))
+* **deps:** update rust crate clap to v4.5.39 ([2cdedbe](https://github.com/AliSajid/gh-bofh/commit/2cdedbec6f98d87071fb7d071b796a478b5efed3))
+* **deps:** update rust crate clap to v4.5.40 ([d4baf02](https://github.com/AliSajid/gh-bofh/commit/d4baf028b7e6501bf87fcc780787882c6e29a530))
+* **deps:** update rust crate clap to v4.5.40 ([a3b0f46](https://github.com/AliSajid/gh-bofh/commit/a3b0f464bfcd1b63c29626e8acfa22729d643f81))
+* **deps:** update rust crate clap to v4.5.41 ([77abfc7](https://github.com/AliSajid/gh-bofh/commit/77abfc7aa82ee23be74b5ac1221f6770872e8483))
+* **deps:** update rust crate clap to v4.5.43 ([dee5db7](https://github.com/AliSajid/gh-bofh/commit/dee5db74825a2388181e4b7237845468f5b2e159))
+* **deps:** update rust crate clap to v4.5.45 ([a6e9225](https://github.com/AliSajid/gh-bofh/commit/a6e92259d9e28d96a2a36c77baf3d25429b21a86))
+* **deps:** update rust crate clap to v4.5.47 ([bcb3749](https://github.com/AliSajid/gh-bofh/commit/bcb3749046340cae36f12d488c5cf36bde4c5a8d))
+* **deps:** update rust crate clap to v4.5.48 ([61dcc66](https://github.com/AliSajid/gh-bofh/commit/61dcc66707f2f4adeab37c945257f1f99612d2aa))
+* **deps:** update rust crate rand to v0.9.2 ([1873d7a](https://github.com/AliSajid/gh-bofh/commit/1873d7abbe6d797687abd7218f76c9dde2aedfed))
+* remove the unused import for arg ([2b69168](https://github.com/AliSajid/gh-bofh/commit/2b691687408f7a6ce95ae3754b4894b8a50944f8))
+
 # [1.4.0-next.9](https://github.com/AliSajid/gh-bofh/compare/v1.4.0-next.8...v1.4.0-next.9) (2025-09-21)
 
 
