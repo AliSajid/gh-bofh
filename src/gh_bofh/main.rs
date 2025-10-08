@@ -5,8 +5,8 @@
 
 //! # gh-bofh
 //!
-//! This is a binary crate that utilizes the `gh_bofh_lib` library to generate
-//! random BOFH excuses. This crate is designed to be used as a plugin/extension for the [`gh`](https://cli.github.com/) CLI tool, but
+//! This is a binary crate / CLI application that utilizes the `gh_bofh_lib`
+//! library to generate random BOFH excuses. This crate is designed to be used as a plugin/extension for the [`gh`](https://cli.github.com/) CLI tool, but
 //! can also be used as a standalone binary.
 //!
 //! The crate provides a CLI interface to generate random BOFH excuses. The
