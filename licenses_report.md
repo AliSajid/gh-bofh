@@ -11,7 +11,7 @@ This page lists the licenses of the projects used in cargo-about.
 
 ## Overview of licenses
 
-- [Apache License 2.0](#Apache-2.0) (76)
+- [Apache License 2.0](#Apache-2.0) (75)
 - [MIT License](#MIT) (19)
 - [Unicode License v3](#Unicode-3.0) (1)
 
@@ -886,8 +886,6 @@ Apache License 2.0
 - [ciborium-io]( https://github.com/enarx/ciborium ) 0.2.2
 - [ciborium-ll]( https://github.com/enarx/ciborium ) 0.2.2
 - [ciborium]( https://github.com/enarx/ciborium ) 0.2.2
-- [clap_builder]( https://github.com/clap-rs/clap ) 4.5.38
-- [clap_derive]( https://github.com/clap-rs/clap ) 4.5.32
 - [clap_lex]( https://github.com/clap-rs/clap ) 0.7.4
 
 #### License
@@ -1326,7 +1324,9 @@ Apache License 2.0
 - [anstyle-wincon]( https://github.com/rust-cli/anstyle.git ) 3.0.7
 - [anstyle]( https://github.com/rust-cli/anstyle.git ) 1.0.10
 - [assert_cmd]( https://github.com/assert-rs/assert_cmd.git ) 2.0.17
-- [clap]( https://github.com/clap-rs/clap ) 4.5.38
+- [clap]( https://github.com/clap-rs/clap ) 4.5.48
+- [clap_builder]( https://github.com/clap-rs/clap ) 4.5.48
+- [clap_derive]( https://github.com/clap-rs/clap ) 4.5.47
 - [colorchoice]( https://github.com/rust-cli/anstyle.git ) 1.0.3
 - [is_terminal_polyfill]( https://github.com/polyfill-rs/is_terminal_polyfill ) 1.70.1
 - [quick-error]( http://github.com/tailhook/quick-error ) 1.2.3
@@ -1965,8 +1965,8 @@ Apache License 2.0
 - [bstr]( https://github.com/BurntSushi/bstr ) 1.12.0
 - [cast]( https://github.com/japaric/cast.rs ) 0.3.0
 - [cfg-if]( https://github.com/alexcrichton/cfg-if ) 1.0.0
-- [criterion-plot]( https://github.com/bheisler/criterion.rs ) 0.5.0
-- [criterion]( https://github.com/bheisler/criterion.rs ) 0.6.0
+- [criterion-plot]( https://github.com/bheisler/criterion.rs ) 0.6.0
+- [criterion]( https://github.com/bheisler/criterion.rs ) 0.7.0
 - [crossbeam-deque]( https://github.com/crossbeam-rs/crossbeam ) 0.8.6
 - [crossbeam-epoch]( https://github.com/crossbeam-rs/crossbeam ) 0.9.18
 - [crossbeam-utils]( https://github.com/crossbeam-rs/crossbeam ) 0.8.21
@@ -1975,7 +1975,6 @@ Apache License 2.0
 - [fastrand]( https://github.com/smol-rs/fastrand ) 2.3.0
 - [fnv]( https://github.com/servo/rust-fnv ) 1.0.7
 - [heck]( https://github.com/withoutboats/heck ) 0.5.0
-- [itertools]( https://github.com/rust-itertools/itertools ) 0.10.5
 - [itertools]( https://github.com/rust-itertools/itertools ) 0.13.0
 - [linux-raw-sys]( https://github.com/sunfishcode/linux-raw-sys ) 0.9.4
 - [num-traits]( https://github.com/rust-num/num-traits ) 0.2.19
@@ -2204,7 +2203,7 @@ Apache License 2.0
 
 #### Used by
 
-- [rand]( https://github.com/rust-random/rand ) 0.9.1
+- [rand]( https://github.com/rust-random/rand ) 0.9.2
 - [rand_chacha]( https://github.com/rust-random/rand ) 0.9.0
 
 #### License
@@ -2833,7 +2832,7 @@ Apache License 2.0
 
 #### Used by
 
-- [gh-bofh]( https://github.com/AliSajid/gh-bofh ) 1.3.0-next.6
+- [gh-bofh]( https://github.com/AliSajid/gh-bofh ) 1.4.0-next.9
 - [anes]( https://github.com/zrzka/anes-rs ) 0.1.6
 
 #### License
