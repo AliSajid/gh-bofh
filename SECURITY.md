@@ -34,3 +34,12 @@ After assessment, we will provide a timeline for remediation and release. Securi
 
 - Critical vulnerabilities: our goal is to resolve these within **7 days** of reporting.
 - Non-critical vulnerabilities: these will be addressed during the normal development cycle and included in future updates.
+
+## Related documents
+
+For additional context and operational guidance, see:
+
+- `SECURITY_REQUIREMENTS.md` — security requirements and expectations for the project.
+- `SECURITY_ASSURANCE.md` — assurance case and verification checklist describing how security requirements are met and verified.
+
+Maintainers regularly run `cargo audit` against `Cargo.lock` to detect known vulnerable dependency versions. If your report relates to a dependency advisory, please include any relevant `cargo-audit` output (text or JSON) to help triage the issue more quickly.

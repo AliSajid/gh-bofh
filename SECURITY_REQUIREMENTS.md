@@ -45,3 +45,8 @@ The project is intended to meet the following core security requirements:
 ## Related documents
 
 See also the repository's [`SECURITY.md`](SECURITY.md) (reporting and disclosure process) and [`SECURITY_ASSURANCE.md`](SECURITY_ASSURANCE.md) (assurance case and verification checklist) for additional context and operational guidance.
+
+Related documents:
+
+- [`SECURITY.md`](SECURITY.md) — reporting and disclosure process.
+- [`SECURITY_ASSURANCE.md`](SECURITY_ASSURANCE.md) — assurance case and verification checklist.
