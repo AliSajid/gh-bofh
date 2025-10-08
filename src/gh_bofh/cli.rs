@@ -5,7 +5,6 @@
 
 // CLI Specification for clap
 use clap::{
-    arg,
     Parser,
     ValueEnum,
 };
