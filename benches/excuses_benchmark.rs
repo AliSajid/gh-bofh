@@ -19,8 +19,8 @@ mod bench {
     // to pass
     // Tracking here: https://github.com/bheisler/criterion.rs/issues/826
     use criterion::{
-        criterion_group,
         Criterion,
+        criterion_group,
     };
     use gh_bofh_lib::{
         random_classic,

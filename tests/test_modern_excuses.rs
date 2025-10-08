@@ -18,8 +18,8 @@
 use std::collections::HashSet;
 
 use gh_bofh_lib::{
-    random_modern,
     MODERN,
+    random_modern,
 };
 
 #[test]
