@@ -9,4 +9,4 @@
 #MISE dir="{{cwd}}"
 
 "./scripts/generate_about_json.sh"
-"./scripts/generate_about_md.sh ./meta/licenses.hbs"
+"./scripts/generate_about_md.sh" "./meta/licenses.hbs"
