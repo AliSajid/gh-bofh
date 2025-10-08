@@ -16,37 +16,32 @@
 
 ## Step 1: Check that rustc and cargo are installed
 
-if ! command -v rustc &> /dev/null
-then
+if ! command -v rustc &>/dev/null; then
     echo "rustc could not be found"
     exit
 fi
 
-if ! command -v cargo &> /dev/null
-then
+if ! command -v cargo &>/dev/null; then
     echo "cargo could not be found"
     exit
 fi
 
 ## Step 2: Check that cargo-about is installed
 
-if ! command -v cargo-about &> /dev/null
-then
+if ! command -v cargo-about &>/dev/null; then
     echo "cargo-about could not be installed"
     exit
 fi
 
-if ! command -v jq &> /dev/null
-then
+if ! command -v jq &>/dev/null; then
     echo "jq could not be found"
     exit
 fi
 
 ## Step 3: Generate the JSON file
 
-if [ -z "$1" ]
-then
-    cargo about generate --format json | jq --sort-keys --indent 4 -r > licenses_report.json
+if [ -z "$1" ]; then
+    cargo about generate --format json --frozen --offline | jq --sort-keys --indent 4 -r >licenses_report.json
 else
-    cargo about generate --format json | jq --sort-keys --indent 4 -r > "$1"
+    cargo about generate --format json --frozen --offline | jq --sort-keys --indent 4 -r >"$1"
 fi
