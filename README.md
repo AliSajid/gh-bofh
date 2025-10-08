@@ -61,7 +61,7 @@ gh extension install AliSajid/gh-bofh
 Run it:
 
 ```bash
-gh bofh-rs
+gh bofh
 ```
 
 If you aren't using the `gh` wrapper, the binary can also be invoked directly after building with `cargo run --bin gh-bofh`.
@@ -80,7 +80,7 @@ The main use-case is as a fun `gh` extension, but the binary is standalone and s
 Basic usage:
 
 ```bash
-gh bofh-rs
+gh bofh
 ```
 
 Flags and environment variables:
@@ -102,19 +102,19 @@ Examples:
 
 ```bash
 # print a classic excuse (default)
-gh bofh-rs
+gh bofh
 
 # print a modern excuse
-gh bofh-rs --type modern
-gh bofh-rs --modern
+gh bofh --type modern
+gh bofh --modern
 
 # set via environment
-EXCUSE_TYPE=modern gh bofh-rs
+EXCUSE_TYPE=modern gh bofh
 ```
 
 ## Integration with the GitHub CLI
 
-This repository is designed to work as a `gh` extension. After installation with `gh extension install`, the command is available as `gh bofh-rs`.
+This repository is designed to work as a `gh` extension. After installation with `gh extension install`, the command is available as `gh bofh`.
 
 If you plan to publish your own fork or distribute a release archive, include the compiled binary named `gh-bofh` in the top-level of the release archive so `gh extension install` can detect it.
 
