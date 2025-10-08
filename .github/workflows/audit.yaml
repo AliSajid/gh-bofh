@@ -5,43 +5,44 @@
 # SPDX-License-Identifier: MIT
 name: Security Audit
 on:
-    schedule:
-        - cron: 0 0 1,15 * *
-    push:
-        branches:
-            - "*"
-        paths:
-            - '**/Cargo.toml'
-            - '**/Cargo.lock'
-    workflow_dispatch:
+  schedule:
+    - cron: 0 0 1,15 * *
+  push:
+    branches:
+      - "*"
+    paths:
+      - "**/Cargo.toml"
+      - "**/Cargo.lock"
+  workflow_dispatch:
 jobs:
-    security_audit:
-        if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
-        runs-on: ubuntu-latest
-        steps:
-            - name: Harden Runner
-              uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-              with:
-                disable-sudo: true
-                egress-policy: block
-                allowed-endpoints: >
-                  github.com:443
-                  index.crates.io:443
-                  objects.githubusercontent.com:443
-                  static.rust-lang.org:443
+  security_audit:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            index.crates.io:443
+            objects.githubusercontent.com:443
+            static.rust-lang.org:443
+            release-assets.githubusercontent.com:443
 
-            - name: Checkout
-              uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
-            - name: Install Rust
-              uses: dtolnay/rust-toolchain@6d653acede28d24f02e3cd41383119e8b1b35921 # stable
-              with:
-                toolchain: stable
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@6d653acede28d24f02e3cd41383119e8b1b35921 # stable
+        with:
+          toolchain: stable
 
-            - name: Install cargo-audit
-              uses: taiki-e/install-action@eba4035583f0f9b001a27be2cce0a136d05d05e3 # v2.62.23
-              with:
-                tool: cargo-audit
+      - name: Install cargo-audit
+        uses: taiki-e/install-action@eba4035583f0f9b001a27be2cce0a136d05d05e3 # v2.62.23
+        with:
+          tool: cargo-audit
 
-            - name: Security Audit
-              run: cargo audit
+      - name: Security Audit
+        run: cargo audit
