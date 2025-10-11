@@ -85,8 +85,8 @@ Getting started locally:
 
 ```bash
 # install the Rust toolchain (recommended to use rustup)
-rustup install 1.74.1
-rustup default 1.74.1
+rustup install 1.85.1
+rustup default 1.85.1
 
 # build and run tests
 cargo build --release

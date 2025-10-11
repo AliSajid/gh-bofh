@@ -55,7 +55,7 @@ fi
 
 if [ -z "$2" ]
 then
-    cargo about generate --format handlebars "$1" | gexpand -t 4 | dos2unix > licenses_report.md
+    cargo about generate --offline --format handlebars "$1" | gexpand -t 4 | dos2unix > licenses_report.md
 else
-    cargo about generate --format handlebars  "$1" | gexpand -t 4 | dos2unix > "$2"
+    cargo about generate --offline --format handlebars  "$1" | gexpand -t 4 | dos2unix > "$2"
 fi
