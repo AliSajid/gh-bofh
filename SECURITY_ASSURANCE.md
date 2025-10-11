@@ -29,6 +29,16 @@ The `gh-bofh` project is a simple command-line tool that generates random BOFH e
    - Threat: An attacker could attempt to inject malicious code into the software or its dependencies.
    - Mitigation: The software uses minimal dependencies (`clap` and `rand`), which are widely used and well-maintained. Input validation is performed by the `clap` library.
 
+### **Threats out of scope**
+
+The following threats are out of scope for this project, based on its architecture and intended usage:
+
+- Network-based attacks (no network I/O occurs during normal operation).
+- Data exfiltration or leakage via application behavior (no data is collected or stored).
+- Filesystem tampering through normal app operation (no files are read or written).
+- Physical access or OS-level compromise of the host.
+- Supply-chain attacks beyond dependency management and auditing practices.
+
 ---
 
 ## **2. Trust Boundaries**
@@ -38,13 +48,13 @@ The `gh-bofh` project is a simple command-line tool that generates random BOFH e
 The trust boundaries for the `gh-bofh` project are as follows:
 
 1. **User Input**:
-   - The command-line arguments provided by the user are parsed by the `clap` library. This is the primary trust boundary, as user input is the only external data the software processes.
+   - The command-line arguments provided by the user and the optional environment variable `EXCUSE_TYPE` (mirrors `--type`) are parsed by the `clap` library. This is the primary trust boundary, as these inputs are the only external data the software processes.
 
 2. **Dependencies**:
    - The software relies on two external libraries (`clap` and `rand`). These libraries are trusted components, but their integrity is ensured by using verified versions from the Rust ecosystem.
 
 3. **Local Execution**:
-   - The software operates entirely locally on the user's machine. There is no network communication or external data exchange, which eliminates many potential trust boundaries.
+   - The software operates entirely locally on the user's machine. There is no network or filesystem I/O as part of normal operation, which eliminates many potential trust boundaries.
 
 ---
 
@@ -55,7 +65,7 @@ The trust boundaries for the `gh-bofh` project are as follows:
 The `gh-bofh` project adheres to the following secure design principles:
 
 1. **Minimal Attack Surface**:
-   - The software has a minimal attack surface due to its limited functionality and lack of network communication. This reduces the potential for security vulnerabilities.
+   - The software has a minimal attack surface due to its limited functionality and lack of network or filesystem I/O. This reduces the potential for security vulnerabilities.
 
 2. **Least Privilege**:
    - The software does not require elevated privileges to run. It operates with the same permissions as the user running the command.
@@ -65,6 +75,8 @@ The `gh-bofh` project adheres to the following secure design principles:
 
 4. **Defense in Depth**:
    - Although the software is simple, it uses well-established libraries (`clap` and `rand`) that follow secure coding practices. This provides an additional layer of security.
+5. **Implementation Constraints**:
+   - The project enforces MSRV 1.85.1, forbids `unsafe_code`, and applies strict rustdoc lints. These constraints reduce the risk of introducing unsafe patterns and keep examples verifiable in CI.
 
 ---
 
@@ -87,7 +99,7 @@ The `gh-bofh` project addresses common implementation security weaknesses as fol
    - The software does not handle sensitive data, eliminating risks related to data breaches or leaks.
 
 5. **Local Execution**:
-   - The software operates entirely locally, reducing the risk of network-based attacks such as man-in-the-middle (MITM) or remote code execution.
+   - The software operates entirely locally with no network or filesystem I/O, reducing the risk of network-based attacks such as man-in-the-middle (MITM) or remote code execution and avoiding file permission concerns.
 
 ---
 
@@ -106,7 +118,7 @@ Related documents:
 - `SECURITY_REQUIREMENTS.md` — security requirements and expectations.
 
 - Continuous Integration: `.github/workflows/ci.yaml` — the CI workflow builds and tests the project across multiple Rust toolchains and platforms, runs formatting and lint checks, and gates releases on successful CI.
-- Toolchain and policy: `Cargo.toml` — lists the project Rust MSRV (`rust-version = "1.74.1"`), dependencies (`clap`, `rand`), and lint rules (forbid `unsafe_code`, deny certain rustdoc errors) which demonstrate intentional safety posture.
+- Toolchain and policy: `Cargo.toml` — lists the project Rust MSRV (`rust-version = "1.85.1"`), dependencies (`clap`, `rand`), and lint rules (forbid `unsafe_code`, deny certain rustdoc errors) which demonstrate intentional safety posture.
 - Dependency lockfile: `Cargo.lock` — records exact dependency versions used during builds, enabling reproducible builds and audits.
 - Tests: `tests/` and crate unit tests — exercise the CLI parsing and core library behavior and are executed by CI (`cargo test`).
 - Release and badge automation: the CI workflow includes steps to publish dynamic build badges and drive the release workflow only when CI passes, reducing the chance of publishing untested code.
@@ -151,7 +163,7 @@ Cargo.toml (toolchain and policy excerpts):
 
 ```toml
 [package]
-rust-version = "1.74.1"
+rust-version = "1.85.1"
 
 [dependencies]
 clap = { version = "4.5.4", features = ["env", "derive"] }
