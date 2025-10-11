@@ -7314,7 +7314,7 @@
                 "edition": "2021",
                 "features": {},
                 "homepage": null,
-                "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh#1.4.0-next.9",
+                "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh#1.4.1-next.1",
                 "keywords": [],
                 "license": "MIT OR Apache-2.0",
                 "license_file": null,
@@ -7324,7 +7324,7 @@
                 "publish": null,
                 "readme": "README.md",
                 "repository": "https://github.com/AliSajid/gh-bofh",
-                "rust_version": "1.74.1",
+                "rust_version": "1.85.1",
                 "source": null,
                 "targets": [
                     {
@@ -7433,7 +7433,7 @@
                         "test": false
                     }
                 ],
-                "version": "1.4.0-next.9"
+                "version": "1.4.1-next.1"
             }
         },
         {
@@ -31378,7 +31378,7 @@
                         "edition": "2021",
                         "features": {},
                         "homepage": null,
-                        "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh#1.4.0-next.9",
+                        "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh#1.4.1-next.1",
                         "keywords": [],
                         "license": "MIT OR Apache-2.0",
                         "license_file": null,
@@ -31388,7 +31388,7 @@
                         "publish": null,
                         "readme": "README.md",
                         "repository": "https://github.com/AliSajid/gh-bofh",
-                        "rust_version": "1.74.1",
+                        "rust_version": "1.85.1",
                         "source": null,
                         "targets": [
                             {
@@ -31497,7 +31497,7 @@
                                 "test": false
                             }
                         ],
-                        "version": "1.4.0-next.9"
+                        "version": "1.4.1-next.1"
                     },
                     "path": null
                 },
