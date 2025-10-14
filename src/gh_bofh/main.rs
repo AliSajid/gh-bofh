@@ -49,11 +49,26 @@ fn main() {
 /// flag), the function returns `EXCUSE_TYPE::Modern`. Otherwise it defers to
 /// the `excuse_type` field in the `Cli` struct as parsed by [`clap`].
 const fn process_choice(arguments: &Cli) -> ExcuseType {
-    if arguments.classic {
+    // Invariant: at most one of classic/modern flags should be true
+    // (clap should enforce mutual exclusivity, but verify in debug builds)
+    debug_assert!(
+        !(arguments.classic && arguments.modern),
+        "CLI parsing allowed both --classic and --modern (should be mutually exclusive)"
+    );
+
+    let choice = if arguments.classic {
         ExcuseType::Classic
     } else if arguments.modern {
         ExcuseType::Modern
     } else {
         arguments.excuse_type
-    }
+    };
+
+    // Post-condition: we always return a valid ExcuseType
+    debug_assert!(
+        matches!(choice, ExcuseType::Classic | ExcuseType::Modern),
+        "process_choice returned invalid ExcuseType"
+    );
+
+    choice
 }

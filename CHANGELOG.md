@@ -1,4 +1,4 @@
-## [1.4.1](https://github.com/AliSajid/gh-bofh/compare/v1.4.0...v1.4.1) (2025-10-08)
+## [1.4.1-next.1](https://github.com/AliSajid/gh-bofh/compare/v1.4.0...v1.4.1-next.1) (2025-10-08)
 
 
 ### Bug Fixes
@@ -13,7 +13,6 @@
 * **deps:** update rust crate clap to v4.5.47 ([bcb3749](https://github.com/AliSajid/gh-bofh/commit/bcb3749046340cae36f12d488c5cf36bde4c5a8d))
 * **deps:** update rust crate clap to v4.5.48 ([61dcc66](https://github.com/AliSajid/gh-bofh/commit/61dcc66707f2f4adeab37c945257f1f99612d2aa))
 * **deps:** update rust crate rand to v0.9.2 ([1873d7a](https://github.com/AliSajid/gh-bofh/commit/1873d7abbe6d797687abd7218f76c9dde2aedfed))
-* remove the unused import for arg ([2b69168](https://github.com/AliSajid/gh-bofh/commit/2b691687408f7a6ce95ae3754b4894b8a50944f8))
 
 # [1.4.0-next.9](https://github.com/AliSajid/gh-bofh/compare/v1.4.0-next.8...v1.4.0-next.9) (2025-09-21)
 
@@ -124,6 +123,7 @@
 ### Bug Fixes
 
 * **deps:** update rust crate clap to v4.5.34 ([582af35](https://github.com/AliSajid/gh-bofh/commit/582af35fb89906da8d061e76d458c98f05d843c9))
+
 # [1.3.0](https://github.com/AliSajid/gh-bofh/compare/v1.2.2...v1.3.0) (2025-03-23)
 
 
@@ -156,7 +156,7 @@
 * remove trailing spaces from certain excuses to ensure consistent test and output response ([acf6882](https://github.com/AliSajid/gh-bofh/commit/acf6882ad8fa061a36931b8cec7f18856091c687))
 * update the length of an excuse ([5ebc5ee](https://github.com/AliSajid/gh-bofh/commit/5ebc5ee76a61af6dfe84d01d74213ee6bd0b4c6e))
 
-## [1.2.1-next.2](https://github.com/AliSajid/gh-bofh-rs/compare/v1.2.1-next.1...v1.2.1-next.2) (2025-03-20)
+## [1.2.1-next.2](https://github.com/AliSajid/gh-bofh/compare/v1.2.1-next.1...v1.2.1-next.2) (2025-03-20)
 
 
 ### Bug Fixes
