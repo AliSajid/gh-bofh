@@ -48,6 +48,48 @@ The project is intended to meet the following core security requirements:
 - Relying on well-maintained crates reduces dependency risk: using widely adopted libraries such as `clap` and `rand` lowers the likelihood of introducing obscure vulnerabilities via dependencies.
 - Explicit implementation constraints (MSRV, `unsafe_code = forbid`, rustdoc lints) keep the codebase within a safer subset of Rust and catch issues early in CI.
 
+## Dynamic analysis and assertion requirements
+
+The project applies dynamic analysis via an automated test suite with comprehensive runtime assertions to satisfy OSSF Best Practices criteria:
+
+### Code coverage (OSSF dynamic_analysis criterion)
+
+- **Tool**: `cargo test` with coverage measurement via `cargo-tarpaulin`
+- **Coverage tracking**: Codecov.io integration in CI (see badge in README)
+- **Threshold**: CI enforces minimum 80% coverage; current coverage is **100%**
+- **Scope**: Tests exercise all CLI argument combinations, environment variable handling, and library functions with varied inputs
+
+### Runtime assertions (OSSF dynamic_analysis_enable_assertions criterion)
+
+The project includes many runtime assertions that are checked during all test runs:
+
+- **Debug assertions in library**: `debug_assert!` macros in `src/gh_bofh_lib/lib.rs` validate:
+  - Array invariants: CLASSIC and MODERN arrays are non-empty
+  - Data integrity: All excuse strings are valid UTF-8
+  - Active during `cargo test` and dev builds; compiled out in release (zero production overhead)
+
+- **CLI contract assertions**: `debug_assert!` in `src/gh_bofh/main.rs::process_choice()` verify:
+  - Mutual exclusivity of `--classic` and `--modern` flags
+  - Valid `ExcuseType` returned in all code paths
+
+- **Test-specific assertions**: Dedicated test functions validate:
+  - Static data integrity (non-empty arrays, valid string lengths)
+  - RNG behavior (never returns fallback strings)
+  - Arithmetic safety (no overflow in array indexing)
+
+- **Property-based testing**: `proptest` (v1.5) systematically generates test cases to verify:
+  - Excuses are always non-empty strings
+  - Returned excuses exist in source arrays
+  - All outputs are valid UTF-8
+  - Invariants hold across varied inputs and RNG seeds
+
+- **Overflow detection**: Test and dev profiles enable `overflow-checks = true` in `Cargo.toml` to catch integer arithmetic bugs during development and CI.
+
+This satisfies both OSSF Best Practices requirements:
+
+- [dynamic_analysis](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis) — automated test suite with >80% branch coverage
+- [dynamic_analysis_enable_assertions](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis_enable_assertions) — many runtime assertions checked during dynamic analysis
+
 ## Threats out of scope
 
 Given the project's design and limited scope, the following threats are considered out of scope:
