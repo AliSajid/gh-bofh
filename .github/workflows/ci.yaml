@@ -20,9 +20,12 @@ env:
   RUST_BACKTRACE: 1
   MINIMUM_WAIT: 3
   MAXIMUM_WAIT: 10
+
 permissions:
-  id-token: write
-  attestations: write
+  contents: read
+  # id-token: write
+  # attestations: write
+
 jobs:
   check_changed_dirs:
     runs-on: ubuntu-latest
@@ -31,7 +34,7 @@ jobs:
       book_changed: ${{steps.changed_dirs.outputs.book}}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
         with:
           disable-sudo: true
           egress-policy: block
@@ -40,11 +43,13 @@ jobs:
             api.github.com:443
 
       - name: Checkout Repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Check changed directories
         id: changed_dirs
-        uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
         with:
           base: ${{ github.ref }}
           filters: |
@@ -78,11 +83,11 @@ jobs:
           - macos
         include:
           - os: windows
-            logo: windows
-          - os: ubuntu
-            logo: ubuntu
+            logoSvg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Windows</title><path d="M0,0H11.377V11.372H0ZM12.623,0H24V11.372H12.623ZM0,12.623H11.377V24H0Zm12.623,0H24V24H12.623"/></svg>'
           - os: macos
-            logo: apple
+            logoSvg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Apple</title><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>'
+          - os: ubuntu
+            logoSvg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Ubuntu</title><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>'
           - rust: 1.85.1 # MSRV
             label: msrv
           - rust: stable
@@ -93,7 +98,7 @@ jobs:
             label: nightly
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
         with:
           disable-sudo: true
           egress-policy: block
@@ -106,25 +111,27 @@ jobs:
             static.crates.io:443
 
       - name: Checkout Repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Install Rust
         if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-        uses: dtolnay/rust-toolchain@6d653acede28d24f02e3cd41383119e8b1b35921 # master
+        uses: dtolnay/rust-toolchain@0b1efabc08b657293548b77fb76cc02d26091c7e # master
         with:
           toolchain: ${{matrix.rust}}
           components: rustfmt, clippy
 
       - name: Install nightly Rust
         if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-        uses: dtolnay/rust-toolchain@6d653acede28d24f02e3cd41383119e8b1b35921 # nightly
+        uses: dtolnay/rust-toolchain@0b1efabc08b657293548b77fb76cc02d26091c7e # nightly
         with:
           toolchain: nightly
           components: rustfmt, clippy
 
       - name: Cache dependencies
         if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-        uses: Swatinem/rust-cache@f13886b937689c021905a6b90929199931d60db1 # v2.8.1
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
 
       - name: Cargo Build
         if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
@@ -144,31 +151,31 @@ jobs:
 
       - name: Wait before badge creation
         if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-        uses: AliSajid/random-wait-action@ae53f7583f1e6c8e8e0fb4587865b586579b07c0 # v2.11.1
+        uses: AliSajid/random-wait-action@933d3635c56777d240b67abe794f1a5f7bdfd063 # v2.12.0
         with:
           minimum: ${{env.MINIMUM_WAIT}}
           maximum: ${{env.MAXIMUM_WAIT}}
 
       - name: Create Awesome Badge - Success
-        uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483 # v1.7.0
+        uses: schneegans/dynamic-badges-action@28b0fa8bdeb46170ac397105ece0c1fe58f68910 # v1.9.0
         if: success()
         with:
           auth: ${{secrets.GIST_SECRET}}
           gistID: ${{env.GIST_KEY}}
           filename: ${{matrix.os}}-${{matrix.label}}.json
           label: Build
-          namedLogo: ${{matrix.logo}}
+          logoSvg: ${{matrix.logoSvg}}
           message: Succeeded
           color: green
 
       - name: Create Awesome Badge - Failure
-        uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483 # v1.7.0
+        uses: schneegans/dynamic-badges-action@28b0fa8bdeb46170ac397105ece0c1fe58f68910 # v1.9.0
         if: failure()
         with:
           auth: ${{secrets.GIST_SECRET}}
           gistID: ${{env.GIST_KEY}}
           filename: ${{matrix.os}}-${{matrix.label}}.json
-          namedLogo: ${{matrix.logo}}
+          logoSvg: ${{matrix.logoSvg}}
           label: Build
           message: Failed
           isError: true
@@ -179,19 +186,22 @@ jobs:
         run: echo "result=${{job.status}}" >> "$GITHUB_OUTPUT"
 
   generate_code_coverage:
-    uses: ./.github/workflows/code_coverage.yaml
+    uses: $/.github/workflows/code_coverage.yaml
     needs: [ci, check_changed_dirs]
     if: ${{needs.check_changed_dirs.outputs.source_changed == 'true'}}
-    secrets: inherit # pragma: allowlist secret
+    # secrets: inherit # pragma: allowlist secret
 
   get-next-version:
-    uses: ./.github/workflows/get_next_version.yaml
+    uses: $/.github/workflows/get_next_version.yaml
     needs: [ci, check_changed_dirs]
     if: ${{needs.ci.outputs.result == 'success'}}
     secrets: inherit # pragma: allowlist secret
 
   semantic-release:
     needs: [ci, get-next-version]
+    permissions:
+      id-token: write
+      attestations: write
     if: ${{needs.get-next-version.outputs.new-release-published == 'true'}}
-    uses: ./.github/workflows/release.yaml
+    uses: $/.github/workflows/release.yaml
     secrets: inherit # pragma: allowlist secret

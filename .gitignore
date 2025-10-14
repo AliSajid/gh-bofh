@@ -45,6 +45,10 @@ target/
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
 
+# Fuzzing artifacts and corpus
+fuzz/corpus/
+fuzz/artifacts/
+
 *.bak
 *.gho
 *.ori
@@ -177,3 +181,13 @@ fabric.properties
 
 # Remove ltex-related files
 ltex.*
+
+.vscode/
+
+# Ignore fuzzing coverage files
+fuzz/coverage
+
+# Allow the custom vale vocabulary
+meta/vale-styles/**/*
+!meta/vale-styles/config/
+!meta/vale-styles/config/**/*

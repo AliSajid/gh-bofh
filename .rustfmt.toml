@@ -25,7 +25,7 @@ use_try_shorthand = true
 # Unstable options as of v1.6.0
 
 ## Enforce colored output
-color = "Always"
+# color = "Always"
 
 ## Configure comments
 wrap_comments = true

@@ -5,13 +5,13 @@
 
 [package]
 name = "gh-bofh"
-version = "1.4.1"
+version = "1.4.1-next.1"
 edition = "2024"
 readme = "README.md"
 description = "A Rust implementation of the classic `bofh` command as a GitHub CLI extension."
 repository = "https://github.com/AliSajid/gh-bofh"
 license = "MIT OR Apache-2.0"
-rust-version = "1.85.1"
+rust-version = "1.88.0"
 
 [lib]
 name = "gh_bofh_lib"
@@ -28,7 +28,7 @@ harness = false
 
 [dependencies]
 clap = { version = "4.5.4", features = ["env", "derive"] }
-rand = { version = "0.9.0" }
+rand = { version = "0.10.3" }
 
 [lints.rust]
 unsafe_code = "forbid" # Ensure that the crate does not use unsafe code
@@ -40,8 +40,12 @@ invalid_rust_codeblocks = "deny"  # Ensure that all rust code blocks are valid
 redundant_explicit_links = "deny" # Ensure that all explicit links are necessary
 
 [profile.dev]
-opt-level = 1 # Do not optimize
-debug = true  # Generate debug symbols
+opt-level = 1          # Do not optimize
+debug = true           # Generate debug symbols
+overflow-checks = true # Catch integer overflow in development
+
+[profile.test]
+overflow-checks = true # Catch integer overflow during tests
 
 [profile.release]
 opt-level = 'z'   # Optimize for size
@@ -51,6 +55,8 @@ panic = "abort"   # Abort on panic
 strip = "symbols" # Strip debug symbols
 
 [dev-dependencies]
-assert_cmd = "=2.0.17"
-criterion = "=0.7.0"
+assert_cmd = "=2.1.1"
+criterion = "=0.8.2"
+escargot = "0.5.15"
+proptest = "=1.11.0"
 sealed_test = "=1.1.0"

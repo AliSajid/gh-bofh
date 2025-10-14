@@ -40,8 +40,9 @@ fi
 
 ## Step 3: Generate the JSON file
 
-if [ -z "$1" ]; then
-    cargo about generate --format json --frozen --offline | jq --sort-keys --indent 4 -r >licenses_report.json
+if [ -z "$1" ]
+then
+    cargo about generate --format json --offline | jq --sort-keys --indent 4 -r > licenses_report.json
 else
-    cargo about generate --format json --frozen --offline | jq --sort-keys --indent 4 -r >"$1"
+    cargo about generate --format json --offline | jq --sort-keys --indent 4 -r > "$1"
 fi

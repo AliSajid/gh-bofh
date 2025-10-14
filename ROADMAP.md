@@ -9,19 +9,19 @@ SPDX-License-Identifier: MIT
 
 ## Overview
 
-This project is currently functionally stable, and no new functionality is planned. Our primary focus will be on maintaining the existing features and expanding the list of Bastard Operator From Hell (BOFH) style excuses.
+The project is currently stable in terms of features and user-facing behavior. At this stage we are not planning major new features; instead our priorities lie in keeping the existing functionality reliable, maintaining compatibility, and carefully growing the content that makes the tool fun and useful. This means focusing on incremental improvements, quality assurance, and curation rather than broad scope changes.
 
 ## Planned Updates
 
-- **Excuse List Expansion**: We're going to add more BOFH-style excuses to keep your users bewildered and your sanity intact.
+- **Excuse List Expansion**: We will continue to grow the corpus of BOFH-style excuses, adding entries that broaden the variety and freshness of the output. New entries will be curated to preserve the project's tone and to avoid duplicating existing content — the aim is to expand variety while keeping the experience cohesive.
 
 ## Maintenance
 
-- **Bug Fixes**: Squashing bugs like the ruthless operator you are.
-- **Performance Improvements**: Making sure the extension runs smoother than your best excuse.
+- **Bug Fixes**: Ongoing maintenance includes addressing reported defects and edge cases to ensure the tool behaves predictably for users. Fixes will focus on correctness, robustness, and clear regression prevention so that users continue to get stable behavior across releases.
+- **Performance Improvements**: We will apply modest performance optimizations where they provide meaningful benefits, keeping the binary lightweight and responsive. Improvements are intended to reduce startup time and runtime overhead without changing user-visible behavior.
 
 ## Community Involvement
 
-- **Feedback and Suggestions**: Got a killer excuse? Share it with us, and it might just make the list.
+- **Feedback and Suggestions**: Community contributions to the excuse corpus and feedback on behavior are welcome. Submissions that align with the project's style may be incorporated after review; community input helps keep the project engaging and current.
 
-Thank you for your continued support, and remember: it's always the user's fault!
+Thank you for your continued support — enjoy the project, and keep the suggestions coming. (And yes: the blame still lies with the user.)

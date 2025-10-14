@@ -1,0 +1,7 @@
+{
+    "dependencies": {
+        "renovate": "44.30.3"
+    },
+    "name": "mise-npm-install",
+    "private": true
+}

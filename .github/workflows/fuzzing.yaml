@@ -1,0 +1,54 @@
+---
+# SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+name: Smoke-Test Fuzz Targets
+
+on:
+  push:
+    branches: ["main", "next"]
+  pull_request:
+    branches: ["main", "next"]
+
+permissions:
+  contents: read
+
+jobs:
+  fuzz:
+    runs-on: ubuntu-latest
+
+    env:
+      FUZZ_TIME: 300
+      MISE_ENV: "fuzz"
+
+    strategy:
+      matrix:
+        include:
+          - fuzz_target: fuzz_random_classic
+          - fuzz_target: fuzz_random_modern
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        with:
+          mise_toml: |
+            [tools]
+            rust = "nightly"
+            "cargo:cargo-fuzz" = "0.13.1"
+          experimental: true
+
+      - run: cargo fuzz build ${{ matrix.fuzz_target }}
+        name: Build the fuzzing target
+
+      - run: cargo fuzz run ${{ matrix.fuzz_target }} -- -max_total_time=${{ env.FUZZ_TIME }}
+        name: Run the fuzzing target for a given amount of time
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: failure()
+        with:
+          name: fuzzing-artifacts-${{ matrix.fuzz_target }}-${{ github.sha }}
+          path: fuzz/artifacts
