@@ -900,9 +900,9 @@ Apache License 2.0
 - [anstyle-wincon]( https://github.com/rust-cli/anstyle.git ) 3.0.7
 - [anstyle]( https://github.com/rust-cli/anstyle.git ) 1.0.10
 - [assert_cmd]( https://github.com/assert-rs/assert_cmd.git ) 2.0.17
-- [clap]( https://github.com/clap-rs/clap ) 4.5.48
-- [clap_builder]( https://github.com/clap-rs/clap ) 4.5.48
-- [clap_derive]( https://github.com/clap-rs/clap ) 4.5.47
+- [clap]( https://github.com/clap-rs/clap ) 4.5.49
+- [clap_builder]( https://github.com/clap-rs/clap ) 4.5.49
+- [clap_derive]( https://github.com/clap-rs/clap ) 4.5.49
 - [colorchoice]( https://github.com/rust-cli/anstyle.git ) 1.0.3
 - [is_terminal_polyfill]( https://github.com/polyfill-rs/is_terminal_polyfill ) 1.70.1
 - [quick-error]( http://github.com/tailhook/quick-error ) 1.2.3

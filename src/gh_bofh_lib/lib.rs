@@ -1,4 +1,3 @@
-// Copyright (c) 2024
 // SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
 //
 // SPDX-License-Identifier: Apache-2.0
@@ -156,7 +155,10 @@ mod tests {
     #[test]
     fn test_random_modern() {
         let excuse: ModernExcuse = random_modern();
-        assert_ne!(excuse, "Excuse engine not initialized");
+        assert_ne!(
+            excuse,
+            "Excuse engine not initialized. Please try again later."
+        );
     }
 
     // Strategy 2: Array validation tests

@@ -6,7 +6,7 @@
 [package]
 name = "gh-bofh"
 version = "1.4.1-next.1"
-edition = "2021"
+edition = "2024"
 readme = "README.md"
 description = "A Rust implementation of the classic `bofh` command as a GitHub CLI extension."
 repository = "https://github.com/AliSajid/gh-bofh"
@@ -40,8 +40,8 @@ invalid_rust_codeblocks = "deny"  # Ensure that all rust code blocks are valid
 redundant_explicit_links = "deny" # Ensure that all explicit links are necessary
 
 [profile.dev]
-opt-level = 1         # Do not optimize
-debug = true          # Generate debug symbols
+opt-level = 1          # Do not optimize
+debug = true           # Generate debug symbols
 overflow-checks = true # Catch integer overflow in development
 
 [profile.test]

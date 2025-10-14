@@ -3376,7 +3376,7 @@
                         "path": null,
                         "registry": null,
                         "rename": null,
-                        "req": "=4.5.48",
+                        "req": "=4.5.49",
                         "source": "registry+https://github.com/rust-lang/crates.io-index",
                         "target": null,
                         "uses_default_features": false
@@ -3389,7 +3389,7 @@
                         "path": null,
                         "registry": null,
                         "rename": null,
-                        "req": "=4.5.47",
+                        "req": "=4.5.49",
                         "source": "registry+https://github.com/rust-lang/crates.io-index",
                         "target": null,
                         "uses_default_features": true
@@ -3595,7 +3595,7 @@
                     ]
                 },
                 "homepage": null,
-                "id": "registry+https://github.com/rust-lang/crates.io-index#clap@4.5.48",
+                "id": "registry+https://github.com/rust-lang/crates.io-index#clap@4.5.49",
                 "keywords": [
                     "argument",
                     "cli",
@@ -3606,7 +3606,7 @@
                 "license": "MIT OR Apache-2.0",
                 "license_file": null,
                 "links": null,
-                "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/Cargo.toml",
+                "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/Cargo.toml",
                 "metadata": {
                     "docs": {
                         "rs": {
@@ -3614,8 +3614,6 @@
                                 "unstable-doc"
                             ],
                             "rustdoc-args": [
-                                "--cfg",
-                                "docsrs",
                                 "--generate-link-to-definition"
                             ]
                         }
@@ -3697,7 +3695,7 @@
                         ],
                         "name": "clap",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/src/lib.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/src/lib.rs",
                         "test": true
                     },
                     {
@@ -3712,7 +3710,7 @@
                         ],
                         "name": "stdio-fixture",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/src/bin/stdio-fixture.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/src/bin/stdio-fixture.rs",
                         "test": true
                     },
                     {
@@ -3729,7 +3727,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/01_quick.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/01_quick.rs",
                         "test": false
                     },
                     {
@@ -3746,7 +3744,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/01_quick.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/01_quick.rs",
                         "test": false
                     },
                     {
@@ -3763,7 +3761,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/02_app_settings.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/02_app_settings.rs",
                         "test": false
                     },
                     {
@@ -3780,7 +3778,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/02_app_settings.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/02_app_settings.rs",
                         "test": false
                     },
                     {
@@ -3795,7 +3793,7 @@
                         ],
                         "name": "02_apps",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/02_apps.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/02_apps.rs",
                         "test": false
                     },
                     {
@@ -3812,7 +3810,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/02_apps.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/02_apps.rs",
                         "test": false
                     },
                     {
@@ -3829,7 +3827,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/02_crate.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/02_crate.rs",
                         "test": false
                     },
                     {
@@ -3846,7 +3844,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/02_crate.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/02_crate.rs",
                         "test": false
                     },
                     {
@@ -3863,7 +3861,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_01_flag_bool.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_01_flag_bool.rs",
                         "test": false
                     },
                     {
@@ -3880,7 +3878,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_01_flag_bool.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_01_flag_bool.rs",
                         "test": false
                     },
                     {
@@ -3897,7 +3895,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_01_flag_count.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_01_flag_count.rs",
                         "test": false
                     },
                     {
@@ -3914,7 +3912,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_01_flag_count.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_01_flag_count.rs",
                         "test": false
                     },
                     {
@@ -3931,7 +3929,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_02_option.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_02_option.rs",
                         "test": false
                     },
                     {
@@ -3948,7 +3946,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_02_option.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_02_option.rs",
                         "test": false
                     },
                     {
@@ -3965,7 +3963,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_02_option_mult.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_02_option_mult.rs",
                         "test": false
                     },
                     {
@@ -3982,7 +3980,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_02_option_mult.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_02_option_mult.rs",
                         "test": false
                     },
                     {
@@ -3999,7 +3997,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_03_positional.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_03_positional.rs",
                         "test": false
                     },
                     {
@@ -4016,7 +4014,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_03_positional.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_03_positional.rs",
                         "test": false
                     },
                     {
@@ -4033,7 +4031,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_03_positional_mult.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_03_positional_mult.rs",
                         "test": false
                     },
                     {
@@ -4050,7 +4048,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_03_positional_mult.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_03_positional_mult.rs",
                         "test": false
                     },
                     {
@@ -4067,7 +4065,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_04_subcommands.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_04_subcommands.rs",
                         "test": false
                     },
                     {
@@ -4084,7 +4082,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_04_subcommands_alt.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_04_subcommands_alt.rs",
                         "test": false
                     },
                     {
@@ -4101,7 +4099,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_04_subcommands.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_04_subcommands.rs",
                         "test": false
                     },
                     {
@@ -4118,7 +4116,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_05_default_values.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_05_default_values.rs",
                         "test": false
                     },
                     {
@@ -4135,7 +4133,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_05_default_values.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_05_default_values.rs",
                         "test": false
                     },
                     {
@@ -4152,7 +4150,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_06_optional.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_06_optional.rs",
                         "test": false
                     },
                     {
@@ -4169,7 +4167,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_06_required.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_06_required.rs",
                         "test": false
                     },
                     {
@@ -4186,7 +4184,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_01_enum.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_01_enum.rs",
                         "test": false
                     },
                     {
@@ -4203,7 +4201,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_01_enum.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_01_enum.rs",
                         "test": false
                     },
                     {
@@ -4220,7 +4218,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_01_possible.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_01_possible.rs",
                         "test": false
                     },
                     {
@@ -4237,7 +4235,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_02_parse.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_02_parse.rs",
                         "test": false
                     },
                     {
@@ -4254,7 +4252,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_02_parse.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_02_parse.rs",
                         "test": false
                     },
                     {
@@ -4271,7 +4269,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_02_validate.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_02_validate.rs",
                         "test": false
                     },
                     {
@@ -4288,7 +4286,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_02_validate.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_02_validate.rs",
                         "test": false
                     },
                     {
@@ -4305,7 +4303,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_03_relations.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_03_relations.rs",
                         "test": false
                     },
                     {
@@ -4322,7 +4320,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_03_relations.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_03_relations.rs",
                         "test": false
                     },
                     {
@@ -4339,7 +4337,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_04_custom.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_04_custom.rs",
                         "test": false
                     },
                     {
@@ -4356,7 +4354,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_04_custom.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_04_custom.rs",
                         "test": false
                     },
                     {
@@ -4373,7 +4371,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/05_01_assert.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/05_01_assert.rs",
                         "test": true
                     },
                     {
@@ -4390,7 +4388,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/05_01_assert.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/05_01_assert.rs",
                         "test": true
                     },
                     {
@@ -4405,7 +4403,7 @@
                         ],
                         "name": "busybox",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/multicall-busybox.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/multicall-busybox.rs",
                         "test": false
                     },
                     {
@@ -4423,7 +4421,7 @@
                             "cargo",
                             "color"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/cargo-example.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/cargo-example.rs",
                         "test": false
                     },
                     {
@@ -4441,7 +4439,7 @@
                             "derive",
                             "color"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/cargo-example-derive.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/cargo-example-derive.rs",
                         "test": false
                     },
                     {
@@ -4458,7 +4456,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/demo.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/demo.rs",
                         "test": false
                     },
                     {
@@ -4475,7 +4473,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/escaped-positional.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/escaped-positional.rs",
                         "test": false
                     },
                     {
@@ -4492,7 +4490,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/escaped-positional-derive.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/escaped-positional-derive.rs",
                         "test": false
                     },
                     {
@@ -4509,7 +4507,7 @@
                         "required-features": [
                             "cargo"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/find.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/find.rs",
                         "test": false
                     },
                     {
@@ -4524,7 +4522,7 @@
                         ],
                         "name": "git",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/git.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/git.rs",
                         "test": false
                     },
                     {
@@ -4541,7 +4539,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/git-derive.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/git-derive.rs",
                         "test": false
                     },
                     {
@@ -4556,7 +4554,7 @@
                         ],
                         "name": "hostname",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/multicall-hostname.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/multicall-hostname.rs",
                         "test": false
                     },
                     {
@@ -4573,7 +4571,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/derive_ref/augment_args.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/derive_ref/augment_args.rs",
                         "test": false
                     },
                     {
@@ -4590,7 +4588,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/derive_ref/augment_subcommands.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/derive_ref/augment_subcommands.rs",
                         "test": false
                     },
                     {
@@ -4607,7 +4605,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/derive_ref/flatten_hand_args.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/derive_ref/flatten_hand_args.rs",
                         "test": false
                     },
                     {
@@ -4624,7 +4622,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/derive_ref/hand_subcommand.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/derive_ref/hand_subcommand.rs",
                         "test": false
                     },
                     {
@@ -4639,7 +4637,7 @@
                         ],
                         "name": "pacman",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/pacman.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/pacman.rs",
                         "test": false
                     },
                     {
@@ -4656,7 +4654,7 @@
                         "required-features": [
                             "help"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/repl.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/repl.rs",
                         "test": false
                     },
                     {
@@ -4673,7 +4671,7 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/repl-derive.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/repl-derive.rs",
                         "test": false
                     },
                     {
@@ -4690,11 +4688,11 @@
                         "required-features": [
                             "derive"
                         ],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/typed-derive/main.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/typed-derive/main.rs",
                         "test": false
                     }
                 ],
-                "version": "4.5.48"
+                "version": "4.5.49"
             }
         },
         {
@@ -4826,6 +4824,19 @@
                     {
                         "features": [],
                         "kind": "dev",
+                        "name": "snapbox",
+                        "optional": false,
+                        "path": null,
+                        "registry": null,
+                        "rename": null,
+                        "req": "^0.6.16",
+                        "source": "registry+https://github.com/rust-lang/crates.io-index",
+                        "target": null,
+                        "uses_default_features": true
+                    },
+                    {
+                        "features": [],
+                        "kind": "dev",
                         "name": "static_assertions",
                         "optional": false,
                         "path": null,
@@ -4907,7 +4918,7 @@
                     ]
                 },
                 "homepage": null,
-                "id": "registry+https://github.com/rust-lang/crates.io-index#clap_builder@4.5.48",
+                "id": "registry+https://github.com/rust-lang/crates.io-index#clap_builder@4.5.49",
                 "keywords": [
                     "argument",
                     "cli",
@@ -4918,20 +4929,15 @@
                 "license": "MIT OR Apache-2.0",
                 "license_file": null,
                 "links": null,
-                "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.48/Cargo.toml",
+                "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.49/Cargo.toml",
                 "metadata": {
                     "docs": {
                         "rs": {
-                            "cargo-args": [
-                                "-Zunstable-options",
-                                "-Zrustdoc-scrape-examples"
-                            ],
                             "features": [
                                 "unstable-doc"
                             ],
                             "rustdoc-args": [
-                                "--cfg",
-                                "docsrs"
+                                "--generate-link-to-definition"
                             ]
                         }
                     },
@@ -4965,11 +4971,11 @@
                         ],
                         "name": "clap_builder",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.48/src/lib.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.49/src/lib.rs",
                         "test": true
                     }
                 ],
-                "version": "4.5.48"
+                "version": "4.5.49"
             }
         },
         {
@@ -5082,7 +5088,7 @@
                     ]
                 },
                 "homepage": null,
-                "id": "registry+https://github.com/rust-lang/crates.io-index#clap_derive@4.5.47",
+                "id": "registry+https://github.com/rust-lang/crates.io-index#clap_derive@4.5.49",
                 "keywords": [
                     "clap",
                     "cli",
@@ -5093,7 +5099,7 @@
                 "license": "MIT OR Apache-2.0",
                 "license_file": null,
                 "links": null,
-                "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_derive-4.5.47/Cargo.toml",
+                "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_derive-4.5.49/Cargo.toml",
                 "metadata": {
                     "docs": {
                         "rs": {
@@ -5130,11 +5136,11 @@
                         ],
                         "name": "clap_derive",
                         "required-features": [],
-                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_derive-4.5.47/src/lib.rs",
+                        "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_derive-4.5.49/src/lib.rs",
                         "test": true
                     }
                 ],
-                "version": "4.5.47"
+                "version": "4.5.49"
             }
         },
         {
@@ -7656,7 +7662,7 @@
                 ],
                 "description": "A Rust implementation of the classic `bofh` command as a GitHub CLI extension.",
                 "documentation": null,
-                "edition": "2021",
+                "edition": "2024",
                 "features": {},
                 "homepage": null,
                 "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh#1.4.1-next.1",
@@ -7678,7 +7684,7 @@
                         ],
                         "doc": true,
                         "doctest": true,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "lib"
                         ],
@@ -7693,7 +7699,7 @@
                         ],
                         "doc": true,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "bin"
                         ],
@@ -7708,7 +7714,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "test"
                         ],
@@ -7723,7 +7729,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "test"
                         ],
@@ -7738,7 +7744,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "test"
                         ],
@@ -7753,7 +7759,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "test"
                         ],
@@ -7768,7 +7774,7 @@
                         ],
                         "doc": false,
                         "doctest": false,
-                        "edition": "2021",
+                        "edition": "2024",
                         "kind": [
                             "bench"
                         ],
@@ -23764,7 +23770,7 @@
                                 "path": null,
                                 "registry": null,
                                 "rename": null,
-                                "req": "=4.5.48",
+                                "req": "=4.5.49",
                                 "source": "registry+https://github.com/rust-lang/crates.io-index",
                                 "target": null,
                                 "uses_default_features": false
@@ -23777,7 +23783,7 @@
                                 "path": null,
                                 "registry": null,
                                 "rename": null,
-                                "req": "=4.5.47",
+                                "req": "=4.5.49",
                                 "source": "registry+https://github.com/rust-lang/crates.io-index",
                                 "target": null,
                                 "uses_default_features": true
@@ -23983,7 +23989,7 @@
                             ]
                         },
                         "homepage": null,
-                        "id": "registry+https://github.com/rust-lang/crates.io-index#clap@4.5.48",
+                        "id": "registry+https://github.com/rust-lang/crates.io-index#clap@4.5.49",
                         "keywords": [
                             "argument",
                             "cli",
@@ -23994,7 +24000,7 @@
                         "license": "MIT OR Apache-2.0",
                         "license_file": null,
                         "links": null,
-                        "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/Cargo.toml",
+                        "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/Cargo.toml",
                         "metadata": {
                             "docs": {
                                 "rs": {
@@ -24002,8 +24008,6 @@
                                         "unstable-doc"
                                     ],
                                     "rustdoc-args": [
-                                        "--cfg",
-                                        "docsrs",
                                         "--generate-link-to-definition"
                                     ]
                                 }
@@ -24085,7 +24089,7 @@
                                 ],
                                 "name": "clap",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/src/lib.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/src/lib.rs",
                                 "test": true
                             },
                             {
@@ -24100,7 +24104,7 @@
                                 ],
                                 "name": "stdio-fixture",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/src/bin/stdio-fixture.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/src/bin/stdio-fixture.rs",
                                 "test": true
                             },
                             {
@@ -24117,7 +24121,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/01_quick.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/01_quick.rs",
                                 "test": false
                             },
                             {
@@ -24134,7 +24138,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/01_quick.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/01_quick.rs",
                                 "test": false
                             },
                             {
@@ -24151,7 +24155,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/02_app_settings.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/02_app_settings.rs",
                                 "test": false
                             },
                             {
@@ -24168,7 +24172,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/02_app_settings.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/02_app_settings.rs",
                                 "test": false
                             },
                             {
@@ -24183,7 +24187,7 @@
                                 ],
                                 "name": "02_apps",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/02_apps.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/02_apps.rs",
                                 "test": false
                             },
                             {
@@ -24200,7 +24204,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/02_apps.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/02_apps.rs",
                                 "test": false
                             },
                             {
@@ -24217,7 +24221,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/02_crate.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/02_crate.rs",
                                 "test": false
                             },
                             {
@@ -24234,7 +24238,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/02_crate.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/02_crate.rs",
                                 "test": false
                             },
                             {
@@ -24251,7 +24255,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_01_flag_bool.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_01_flag_bool.rs",
                                 "test": false
                             },
                             {
@@ -24268,7 +24272,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_01_flag_bool.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_01_flag_bool.rs",
                                 "test": false
                             },
                             {
@@ -24285,7 +24289,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_01_flag_count.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_01_flag_count.rs",
                                 "test": false
                             },
                             {
@@ -24302,7 +24306,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_01_flag_count.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_01_flag_count.rs",
                                 "test": false
                             },
                             {
@@ -24319,7 +24323,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_02_option.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_02_option.rs",
                                 "test": false
                             },
                             {
@@ -24336,7 +24340,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_02_option.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_02_option.rs",
                                 "test": false
                             },
                             {
@@ -24353,7 +24357,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_02_option_mult.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_02_option_mult.rs",
                                 "test": false
                             },
                             {
@@ -24370,7 +24374,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_02_option_mult.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_02_option_mult.rs",
                                 "test": false
                             },
                             {
@@ -24387,7 +24391,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_03_positional.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_03_positional.rs",
                                 "test": false
                             },
                             {
@@ -24404,7 +24408,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_03_positional.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_03_positional.rs",
                                 "test": false
                             },
                             {
@@ -24421,7 +24425,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_03_positional_mult.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_03_positional_mult.rs",
                                 "test": false
                             },
                             {
@@ -24438,7 +24442,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_03_positional_mult.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_03_positional_mult.rs",
                                 "test": false
                             },
                             {
@@ -24455,7 +24459,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_04_subcommands.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_04_subcommands.rs",
                                 "test": false
                             },
                             {
@@ -24472,7 +24476,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_04_subcommands_alt.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_04_subcommands_alt.rs",
                                 "test": false
                             },
                             {
@@ -24489,7 +24493,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_04_subcommands.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_04_subcommands.rs",
                                 "test": false
                             },
                             {
@@ -24506,7 +24510,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_05_default_values.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_05_default_values.rs",
                                 "test": false
                             },
                             {
@@ -24523,7 +24527,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_05_default_values.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_05_default_values.rs",
                                 "test": false
                             },
                             {
@@ -24540,7 +24544,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/03_06_optional.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/03_06_optional.rs",
                                 "test": false
                             },
                             {
@@ -24557,7 +24561,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/03_06_required.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/03_06_required.rs",
                                 "test": false
                             },
                             {
@@ -24574,7 +24578,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_01_enum.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_01_enum.rs",
                                 "test": false
                             },
                             {
@@ -24591,7 +24595,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_01_enum.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_01_enum.rs",
                                 "test": false
                             },
                             {
@@ -24608,7 +24612,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_01_possible.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_01_possible.rs",
                                 "test": false
                             },
                             {
@@ -24625,7 +24629,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_02_parse.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_02_parse.rs",
                                 "test": false
                             },
                             {
@@ -24642,7 +24646,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_02_parse.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_02_parse.rs",
                                 "test": false
                             },
                             {
@@ -24659,7 +24663,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_02_validate.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_02_validate.rs",
                                 "test": false
                             },
                             {
@@ -24676,7 +24680,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_02_validate.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_02_validate.rs",
                                 "test": false
                             },
                             {
@@ -24693,7 +24697,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_03_relations.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_03_relations.rs",
                                 "test": false
                             },
                             {
@@ -24710,7 +24714,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_03_relations.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_03_relations.rs",
                                 "test": false
                             },
                             {
@@ -24727,7 +24731,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/04_04_custom.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/04_04_custom.rs",
                                 "test": false
                             },
                             {
@@ -24744,7 +24748,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/04_04_custom.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/04_04_custom.rs",
                                 "test": false
                             },
                             {
@@ -24761,7 +24765,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_builder/05_01_assert.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_builder/05_01_assert.rs",
                                 "test": true
                             },
                             {
@@ -24778,7 +24782,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/tutorial_derive/05_01_assert.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/tutorial_derive/05_01_assert.rs",
                                 "test": true
                             },
                             {
@@ -24793,7 +24797,7 @@
                                 ],
                                 "name": "busybox",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/multicall-busybox.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/multicall-busybox.rs",
                                 "test": false
                             },
                             {
@@ -24811,7 +24815,7 @@
                                     "cargo",
                                     "color"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/cargo-example.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/cargo-example.rs",
                                 "test": false
                             },
                             {
@@ -24829,7 +24833,7 @@
                                     "derive",
                                     "color"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/cargo-example-derive.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/cargo-example-derive.rs",
                                 "test": false
                             },
                             {
@@ -24846,7 +24850,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/demo.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/demo.rs",
                                 "test": false
                             },
                             {
@@ -24863,7 +24867,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/escaped-positional.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/escaped-positional.rs",
                                 "test": false
                             },
                             {
@@ -24880,7 +24884,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/escaped-positional-derive.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/escaped-positional-derive.rs",
                                 "test": false
                             },
                             {
@@ -24897,7 +24901,7 @@
                                 "required-features": [
                                     "cargo"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/find.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/find.rs",
                                 "test": false
                             },
                             {
@@ -24912,7 +24916,7 @@
                                 ],
                                 "name": "git",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/git.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/git.rs",
                                 "test": false
                             },
                             {
@@ -24929,7 +24933,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/git-derive.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/git-derive.rs",
                                 "test": false
                             },
                             {
@@ -24944,7 +24948,7 @@
                                 ],
                                 "name": "hostname",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/multicall-hostname.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/multicall-hostname.rs",
                                 "test": false
                             },
                             {
@@ -24961,7 +24965,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/derive_ref/augment_args.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/derive_ref/augment_args.rs",
                                 "test": false
                             },
                             {
@@ -24978,7 +24982,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/derive_ref/augment_subcommands.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/derive_ref/augment_subcommands.rs",
                                 "test": false
                             },
                             {
@@ -24995,7 +24999,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/derive_ref/flatten_hand_args.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/derive_ref/flatten_hand_args.rs",
                                 "test": false
                             },
                             {
@@ -25012,7 +25016,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/derive_ref/hand_subcommand.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/derive_ref/hand_subcommand.rs",
                                 "test": false
                             },
                             {
@@ -25027,7 +25031,7 @@
                                 ],
                                 "name": "pacman",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/pacman.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/pacman.rs",
                                 "test": false
                             },
                             {
@@ -25044,7 +25048,7 @@
                                 "required-features": [
                                     "help"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/repl.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/repl.rs",
                                 "test": false
                             },
                             {
@@ -25061,7 +25065,7 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/repl-derive.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/repl-derive.rs",
                                 "test": false
                             },
                             {
@@ -25078,11 +25082,11 @@
                                 "required-features": [
                                     "derive"
                                 ],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.48/examples/typed-derive/main.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.5.49/examples/typed-derive/main.rs",
                                 "test": false
                             }
                         ],
-                        "version": "4.5.48"
+                        "version": "4.5.49"
                     },
                     "path": null
                 },
@@ -25214,6 +25218,19 @@
                             {
                                 "features": [],
                                 "kind": "dev",
+                                "name": "snapbox",
+                                "optional": false,
+                                "path": null,
+                                "registry": null,
+                                "rename": null,
+                                "req": "^0.6.16",
+                                "source": "registry+https://github.com/rust-lang/crates.io-index",
+                                "target": null,
+                                "uses_default_features": true
+                            },
+                            {
+                                "features": [],
+                                "kind": "dev",
                                 "name": "static_assertions",
                                 "optional": false,
                                 "path": null,
@@ -25295,7 +25312,7 @@
                             ]
                         },
                         "homepage": null,
-                        "id": "registry+https://github.com/rust-lang/crates.io-index#clap_builder@4.5.48",
+                        "id": "registry+https://github.com/rust-lang/crates.io-index#clap_builder@4.5.49",
                         "keywords": [
                             "argument",
                             "cli",
@@ -25306,20 +25323,15 @@
                         "license": "MIT OR Apache-2.0",
                         "license_file": null,
                         "links": null,
-                        "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.48/Cargo.toml",
+                        "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.49/Cargo.toml",
                         "metadata": {
                             "docs": {
                                 "rs": {
-                                    "cargo-args": [
-                                        "-Zunstable-options",
-                                        "-Zrustdoc-scrape-examples"
-                                    ],
                                     "features": [
                                         "unstable-doc"
                                     ],
                                     "rustdoc-args": [
-                                        "--cfg",
-                                        "docsrs"
+                                        "--generate-link-to-definition"
                                     ]
                                 }
                             },
@@ -25353,11 +25365,11 @@
                                 ],
                                 "name": "clap_builder",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.48/src/lib.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.49/src/lib.rs",
                                 "test": true
                             }
                         ],
-                        "version": "4.5.48"
+                        "version": "4.5.49"
                     },
                     "path": null
                 },
@@ -25470,7 +25482,7 @@
                             ]
                         },
                         "homepage": null,
-                        "id": "registry+https://github.com/rust-lang/crates.io-index#clap_derive@4.5.47",
+                        "id": "registry+https://github.com/rust-lang/crates.io-index#clap_derive@4.5.49",
                         "keywords": [
                             "clap",
                             "cli",
@@ -25481,7 +25493,7 @@
                         "license": "MIT OR Apache-2.0",
                         "license_file": null,
                         "links": null,
-                        "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_derive-4.5.47/Cargo.toml",
+                        "manifest_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_derive-4.5.49/Cargo.toml",
                         "metadata": {
                             "docs": {
                                 "rs": {
@@ -25518,11 +25530,11 @@
                                 ],
                                 "name": "clap_derive",
                                 "required-features": [],
-                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_derive-4.5.47/src/lib.rs",
+                                "src_path": "/Users/aimami/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_derive-4.5.49/src/lib.rs",
                                 "test": true
                             }
                         ],
-                        "version": "4.5.47"
+                        "version": "4.5.49"
                     },
                     "path": null
                 },
@@ -33725,7 +33737,7 @@
                         ],
                         "description": "A Rust implementation of the classic `bofh` command as a GitHub CLI extension.",
                         "documentation": null,
-                        "edition": "2021",
+                        "edition": "2024",
                         "features": {},
                         "homepage": null,
                         "id": "path+file:///Users/aimami/experiments/rust-projects/gh-bofh#1.4.1-next.1",
@@ -33747,7 +33759,7 @@
                                 ],
                                 "doc": true,
                                 "doctest": true,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "lib"
                                 ],
@@ -33762,7 +33774,7 @@
                                 ],
                                 "doc": true,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "bin"
                                 ],
@@ -33777,7 +33789,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "test"
                                 ],
@@ -33792,7 +33804,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "test"
                                 ],
@@ -33807,7 +33819,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "test"
                                 ],
@@ -33822,7 +33834,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "test"
                                 ],
@@ -33837,7 +33849,7 @@
                                 ],
                                 "doc": false,
                                 "doctest": false,
-                                "edition": "2021",
+                                "edition": "2024",
                                 "kind": [
                                     "bench"
                                 ],

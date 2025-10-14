@@ -1,4 +1,3 @@
-// Copyright (c) 2024
 // SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
 //
 // SPDX-License-Identifier: Apache-2.0
@@ -20,7 +19,7 @@ use clap::{
 /// excuse, while the [`Modern`](ExcuseType::Modern) variant represents a more
 /// modern BOFH excuse.
 ///
-/// The ultimate purpose of this `enum` is to contrain the available valid
+/// The ultimate purpose of this `enum` is to constrain the available valid
 /// options for the [`Cli`] struct, which is used to parse the command line
 /// arguments.
 ///
