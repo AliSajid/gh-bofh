@@ -177,3 +177,5 @@ fabric.properties
 
 # Remove ltex-related files
 ltex.*
+
+.vscode/

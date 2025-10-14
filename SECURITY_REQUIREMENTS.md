@@ -5,78 +5,110 @@ SPDX-License-Identifier: Apache-2.0
 SPDX-License-Identifier: MIT
 -->
 
-# **Security Requirements and Expectations**
+# Security requirements and expectations
 
-This document outlines the **security requirements** for the `gh-bofh` project, as well as what users can and cannot expect in terms of security from the software.
+This document describes the security expectations for the `gh-bofh` project and the mandatory security requirements the project aims to satisfy. It is written for users, contributors, and maintainers so they can understand the project's assumptions and responsibilities.
 
----
+## Scope
 
-## **What Users Can Expect**
+This project is a small, local command-line tool that prints randomly selected BOFH-style excuses. The scope of the security requirements is limited to the behavior of the software itself:
 
-1. **No Sensitive Data Handling**:
-   - The `gh-bofh` software does not handle, process, or store any sensitive or personal data. It is a simple command-line tool that generates random BOFH excuses.
-   - Users can expect that the software does not pose a risk to their data privacy.
+- Local execution with no network or filesystem I/O during normal operation.
+- Input surface limited to command-line arguments and an optional environment variable `EXCUSE_TYPE` that mirrors the `--type` flag.
+- Dependency management and build policies (MSRV and linting) that constrain implementation choices.
 
-2. **No Network Communication**:
-   - The software does not communicate over the network. All operations are performed locally on the user's machine.
-   - Users can expect that the software does not introduce network-related security risks.
+## What users can expect
 
-3. **Transparent Source Code**:
-   - The source code is open and available for review on GitHub. Users can inspect the code to verify its functionality and security.
-   - Users can expect transparency in how the software operates.
+- No sensitive data handling: `gh-bofh` does not collect, store, or transmit personal or sensitive data. All operations occur locally on the user's machine.
+- No network or filesystem I/O: the tool does not perform network requests or read/write files as part of normal operation; output is printed to stdout.
+- Transparent source code: the project is open-source and the codebase can be inspected on GitHub for verification and review.
+- Minimal dependencies: the implementation uses a small, well-known set of crates (for example, `clap` for CLI parsing and `rand` for randomness), limiting the third-party attack surface.
 
-4. **Minimal Dependencies**:
-   - The software has minimal dependencies (`clap` for CLI argument parsing and `rand` for random number generation). These dependencies are widely used and well-maintained.
-   - Users can expect that the software does not introduce unnecessary security risks through third-party libraries.
+## What users cannot expect
 
----
+- No formal security guarantees: the project is provided "as-is" and there are no explicit warranties that the software is free from vulnerabilities.
+- No built-in protections against intentional misuse: beyond standard CLI argument parsing, the tool does not include advanced input sanitization or misuse prevention mechanisms.
+- No guaranteed long-term security support: security fixes are made on a best-effort basis and there is no formal long-term support commitment.
 
-## **What Users Cannot Expect**
+## Security requirements (must-haves)
 
-1. **No Security Guarantees**:
-   - While the software is designed to be simple and secure, it is provided **as-is** without any explicit security guarantees.
-   - Users should not expect the software to be free from vulnerabilities or bugs.
+The project is intended to meet the following core security requirements:
 
-2. **No Protection Against Malicious Use**:
-   - The software does not include mechanisms to prevent misuse or malicious use. For example, it does not validate or sanitize input beyond basic CLI argument parsing.
-   - Users should not expect the software to protect against intentional misuse.
+1. No data collection: the software must not collect, persist, or transmit user data.
+2. Local execution only: the software must operate entirely on the local machine with no network or filesystem I/O required for normal operation.
+3. Minimal attack surface: the code should use only essential dependencies and avoid unnecessary features that increase risk.
+4. Transparency: source code and documentation should be available so users and reviewers can inspect the implementation and verify behavior.
+5. Implementation constraints: maintain MSRV at 1.85.1 and forbid `unsafe_code`; keep examples valid via rustdoc lints.
 
-3. **No Long-Term Support for Security Issues**:
-   - While security issues will be addressed on a best-effort basis, there is no formal long-term support (LTS) commitment for the software.
-   - Users should not expect ongoing security updates or patches beyond the maintainer's availability.
+## Rationale and justification
 
----
+- Simplicity reduces risk: a small, focused codebase with no network or filesystem I/O is less likely to contain complex vulnerabilities.
+- Limited scope reduces exposure: because the tool is local and does not handle sensitive data, common threat vectors (network, data leakage) are largely out of scope.
+- Open-source review: public code enables community review and discovery of potential issues.
+- Relying on well-maintained crates reduces dependency risk: using widely adopted libraries such as `clap` and `rand` lowers the likelihood of introducing obscure vulnerabilities via dependencies.
+- Explicit implementation constraints (MSRV, `unsafe_code = forbid`, rustdoc lints) keep the codebase within a safer subset of Rust and catch issues early in CI.
 
-## **Security Requirements**
+## Dynamic analysis and assertion requirements
 
-The `gh-bofh` software is intended to meet the following security requirements:
+The project applies dynamic analysis via an automated test suite with comprehensive runtime assertions to satisfy OSSF Best Practices criteria:
 
-1. **No Data Collection**:
-   - The software must not collect, store, or transmit any user data.
+### Code coverage (OSSF dynamic_analysis criterion)
 
-2. **Local Execution Only**:
-   - The software must operate entirely locally on the user's machine, with no network communication.
+- **Tool**: `cargo test` with coverage measurement via `cargo-tarpaulin`
+- **Coverage tracking**: Codecov.io integration in CI (see badge in README)
+- **Threshold**: CI enforces minimum 80% coverage; current coverage is **100%**
+- **Scope**: Tests exercise all CLI argument combinations, environment variable handling, and library functions with varied inputs
 
-3. **Minimal Attack Surface**:
-   - The software must minimize its attack surface by using only essential dependencies and avoiding unnecessary complexity.
+### Runtime assertions (OSSF dynamic_analysis_enable_assertions criterion)
 
-4. **Transparency**:
-   - The software must provide full transparency into its functionality through open-source code and clear documentation.
+The project includes many runtime assertions that are checked during all test runs:
 
----
+- **Debug assertions in library**: `debug_assert!` macros in `src/gh_bofh_lib/lib.rs` validate:
+  - Array invariants: CLASSIC and MODERN arrays are non-empty
+  - Data integrity: All excuse strings are valid UTF-8
+  - Active during `cargo test` and dev builds; compiled out in release (zero production overhead)
 
-## **Security Justification**
+- **CLI contract assertions**: `debug_assert!` in `src/gh_bofh/main.rs::process_choice()` verify:
+  - Mutual exclusivity of `--classic` and `--modern` flags
+  - Valid `ExcuseType` returned in all code paths
 
-The security requirements are justified based on the following principles:
+- **Test-specific assertions**: Dedicated test functions validate:
+  - Static data integrity (non-empty arrays, valid string lengths)
+  - RNG behavior (never returns fallback strings)
+  - Arithmetic safety (no overflow in array indexing)
 
-1. **Simplicity**:
-   - The software is designed to be simple and lightweight, reducing the likelihood of security vulnerabilities.
+- **Property-based testing**: `proptest` (v1.5) systematically generates test cases to verify:
+  - Excuses are always non-empty strings
+  - Returned excuses exist in source arrays
+  - All outputs are valid UTF-8
+  - Invariants hold across varied inputs and RNG seeds
 
-2. **Limited Scope**:
-   - The software's scope is limited to generating random excuses, which does not involve sensitive operations or data.
+- **Overflow detection**: Test and dev profiles enable `overflow-checks = true` in `Cargo.toml` to catch integer arithmetic bugs during development and CI.
 
-3. **Open Source**:
-   - The open-source nature of the software allows for community review and contributions, which helps identify and address potential security issues.
+This satisfies both OSSF Best Practices requirements:
 
-4. **Minimal Dependencies**:
-   - By relying on well-established and widely-used libraries (`clap` and `rand`), the software reduces the risk of introducing vulnerabilities through third-party code.
+- [dynamic_analysis](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis) — automated test suite with >80% branch coverage
+- [dynamic_analysis_enable_assertions](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis_enable_assertions) — many runtime assertions checked during dynamic analysis
+
+## Threats out of scope
+
+Given the project's design and limited scope, the following threats are considered out of scope:
+
+- Network-based threats (no network I/O occurs during normal operation).
+- Data breaches or leakage through the app (no data is collected or stored).
+- Filesystem compromise via application behavior (no files are read/written in normal use).
+- Physical access or OS-level compromise of the host running the tool.
+- Broader software supply-chain attacks beyond standard dependency hygiene and audits.
+
+## Related documents
+
+See also the repository's [`SECURITY.md`](SECURITY.md) (reporting and disclosure process) and [`SECURITY_ASSURANCE.md`](SECURITY_ASSURANCE.md) (assurance case and verification checklist) for additional context and operational guidance.
+
+Related design reference:
+
+- [`ARCHITECTURE.md`](ARCHITECTURE.md) — components, data/control flows, and trust boundaries including the CLI/environment inputs and stdout-only output.
+
+Related documents:
+
+- [`SECURITY.md`](SECURITY.md) — reporting and disclosure process.
+- [`SECURITY_ASSURANCE.md`](SECURITY_ASSURANCE.md) — assurance case and verification checklist.

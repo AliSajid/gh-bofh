@@ -5,45 +5,45 @@
 # SPDX-License-Identifier: MIT
 name: Code Coverage
 on:
-    workflow_call:
+  workflow_call:
 jobs:
-    test:
-        name: Generate Coverage
-        runs-on: ubuntu-latest
-        container:
-            image: xd009642/tarpaulin:develop-nightly@sha256:c4297d8fc17384a117849d8eb66d57ad802f9e93926be710f320c204097d28b1
-            options: --security-opt seccomp=unconfined
+  test:
+    name: Generate Coverage
+    runs-on: ubuntu-latest
+    container:
+      image: xd009642/tarpaulin:develop-nightly@sha256:0359382ec9dbd6bfe8fe556d97dd7f593d920be3bcb69740b4f8702425db269b
+      options: --security-opt seccomp=unconfined
 
-        steps:
-            - name: Harden Runner
-              uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-              with:
-                egress-policy: audit
-            - name: Checkout repository
-              uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          egress-policy: audit
+      - name: Checkout repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
-            - uses: dtolnay/rust-toolchain@6d653acede28d24f02e3cd41383119e8b1b35921 # nightly
-              with:
-                toolchain: nightly
-                components: llvm-tools-preview
+      - uses: dtolnay/rust-toolchain@6d653acede28d24f02e3cd41383119e8b1b35921 # nightly
+        with:
+          toolchain: nightly
+          components: llvm-tools-preview
 
-            - name: Install necessary tools
-              uses: taiki-e/install-action@eba4035583f0f9b001a27be2cce0a136d05d05e3 # v2.62.23
-              with:
-                tool: cargo-llvm-cov,nextest,cargo-tarpaulin
+      - name: Install necessary tools
+        uses: taiki-e/install-action@5b5de1b4da26ad411330c0454bdd72929bfcbeb2 # v2.62.29
+        with:
+          tool: cargo-llvm-cov,nextest,cargo-tarpaulin
 
-            - name: Collect coverage data (including doctests)
-              run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
+      - name: Collect coverage data (including doctests)
+        run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
 
-            - name: Upload to codecov.io
-              uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
-              with:
-                token: ${{ secrets.CODECOV_TOKEN }}
-                verbose: true
-                working-directory: .
-            - name: Upload coverage reports to Codacy
-              uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # 1.3.0
-              with:
-                project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-                coverage-reports: cobertura.xml
-                language: Rust
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
+          working-directory: .
+      - name: Upload coverage reports to Codacy
+        uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # 1.3.0
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: cobertura.xml
+          language: Rust

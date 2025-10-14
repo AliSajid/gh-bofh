@@ -5,68 +5,68 @@
 # SPDX-License-Identifier: MIT
 name: Next semantic-release version
 on:
-    workflow_call:
-        outputs:
-            new-release-published:
-                description: Indicates whether a new release will be published. The value is a string, either 'true' or 'false'.
-                value: ${{ jobs.get-next-version.outputs.new-release-published }}
+  workflow_call:
+    outputs:
+      new-release-published:
+        description: Indicates whether a new release will be published. The value is a string, either 'true' or 'false'.
+        value: ${{ jobs.get-next-version.outputs.new-release-published }}
 
 jobs:
-    get-next-version:
-        name: Get next release version
-        runs-on: ubuntu-latest
-        outputs:
-            new-release-published: ${{ steps.get-next-version.outputs.new-release-published }}
-        steps:
-            - name: Harden Runner
-              uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-              with:
-                disable-sudo: true
-                egress-policy: block
-                allowed-endpoints: >
-                    github.com:443
-                    api.github.com:443
-                    registry.npmjs.org:443
+  get-next-version:
+    name: Get next release version
+    runs-on: ubuntu-latest
+    outputs:
+      new-release-published: ${{ steps.get-next-version.outputs.new-release-published }}
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            registry.npmjs.org:443
 
-            - name: Checkout
-              uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-              with:
-                fetch-depth: 0
-                persist-credentials: false
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
-            - name: Configure Node.js
-              uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
-              with:
-                node-version: lts/*
+      - name: Configure Node.js
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version: lts/*
 
-            - name: Cache action npm dependencies
-              uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-              id: cache-node-modules
-              with:
-                path: ${{ runner.temp }}/.semantic-release-action_next-release-version/node_modules
-                key: |
-                    semantic-release-action/next-release-version-${{ runner.os }}-node-${{ hashFiles('${{ github.action_path }}/package-lock.json') }}
+      - name: Cache action npm dependencies
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        id: cache-node-modules
+        with:
+          path: ${{ runner.temp }}/.semantic-release-action_next-release-version/node_modules
+          key: |
+            semantic-release-action/next-release-version-${{ runner.os }}-node-${{ hashFiles('${{ github.action_path }}/package-lock.json') }}
 
-            - name: Install dependencies on cache miss
-              if: steps.cache-node-modules.outputs.cache-hit != 'true'
-              run: |
-                npm install -g semantic-release semantic-release-export-data
-              shell: bash
+      - name: Install dependencies on cache miss
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: |
+          npm install -g semantic-release semantic-release-export-data
+        shell: bash
 
-            - name: Get next release version
-              id: get-next-version
-              env:
-                GITHUB_TOKEN: ${{secrets.ACTIONS_PAT_GITHUB}}
-              run: |
-                : calculate next semantic-release version
-                semantic-release \
-                --dry-run \
-                --plugins semantic-release-export-data \
-                --verify-conditions semantic-release-export-data \
-                --verify-release '' \
-                --generate-notes semantic-release-export-data \
-                --prepare '' \
-                --publish '' \
-                --success '' \
-                --fail ''
-              shell: bash
+      - name: Get next release version
+        id: get-next-version
+        env:
+          GITHUB_TOKEN: ${{secrets.ACTIONS_PAT_GITHUB}}
+        run: |
+          : calculate next semantic-release version
+          semantic-release \
+          --dry-run \
+          --plugins semantic-release-export-data \
+          --verify-conditions semantic-release-export-data \
+          --verify-release '' \
+          --generate-notes semantic-release-export-data \
+          --prepare '' \
+          --publish '' \
+          --success '' \
+          --fail ''
+        shell: bash
