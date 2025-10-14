@@ -168,7 +168,7 @@ jobs:
           auth: ${{secrets.GIST_SECRET}}
           gistID: ${{env.GIST_KEY}}
           filename: ${{matrix.os}}-${{matrix.label}}.json
-          logoSvg: ${{matrix.logo}}
+          logoSvg: ${{matrix.logoSvg}}
           label: Build
           message: Failed
           isError: true
