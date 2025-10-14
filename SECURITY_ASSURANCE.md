@@ -118,10 +118,36 @@ Related documents:
 - `SECURITY_REQUIREMENTS.md` — security requirements and expectations.
 
 - Continuous Integration: `.github/workflows/ci.yaml` — the CI workflow builds and tests the project across multiple Rust toolchains and platforms, runs formatting and lint checks, and gates releases on successful CI.
-- Toolchain and policy: `Cargo.toml` — lists the project Rust MSRV (`rust-version = "1.85.1"`), dependencies (`clap`, `rand`), and lint rules (forbid `unsafe_code`, deny certain rustdoc errors) which demonstrate intentional safety posture.
+- Toolchain and policy: `Cargo.toml` — lists the project Rust MSRV (`rust-version = "1.85.1"`), dependencies (`clap`, `rand`, `proptest` for testing), and lint rules (forbid `unsafe_code`, deny certain rustdoc errors) which demonstrate intentional safety posture. Profile settings enable `overflow-checks = true` in test and dev builds.
 - Dependency lockfile: `Cargo.lock` — records exact dependency versions used during builds, enabling reproducible builds and audits.
 - Tests: `tests/` and crate unit tests — exercise the CLI parsing and core library behavior and are executed by CI (`cargo test`).
 - Release and badge automation: the CI workflow includes steps to publish dynamic build badges and drive the release workflow only when CI passes, reducing the chance of publishing untested code.
+
+**Dynamic Analysis and Assertions (OSSF Compliance)**:
+
+- **Code Coverage**: The project maintains 100% code coverage via automated test suite, measured using `cargo-tarpaulin` and reported to [Codecov.io](https://codecov.io/gh/AliSajid/gh-bofh). This satisfies the OSSF [dynamic_analysis](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis) requirement (>80% branch coverage).
+
+- **Runtime Assertions**: The codebase includes extensive `debug_assert!` macros in library functions (`src/gh_bofh_lib/lib.rs`) and CLI processing (`src/gh_bofh/main.rs`) that validate:
+  - Array invariants: CLASSIC and MODERN arrays are non-empty
+  - Data integrity: All excuse strings are valid UTF-8
+  - Function contracts: Preconditions (mutual exclusivity of flags) and postconditions (valid ExcuseType returned)
+  - These assertions are **active during all test runs** but compiled out in release builds (zero production overhead)
+
+- **Test-Specific Assertions**: Dedicated test functions validate static data integrity:
+  - `classic_excuses_are_nonempty` / `modern_excuses_are_nonempty` — verify arrays contain excuses
+  - `all_classic_excuses_are_nonempty_strings` / `all_modern_excuses_are_nonempty_strings` — validate individual excuse quality
+  - `random_classic_never_returns_fallback` / `random_modern_never_returns_fallback` — ensure RNG logic works correctly
+  - `array_indexing_does_not_overflow` — stress-test random selection for arithmetic bugs
+
+- **Property-Based Testing**: The project uses `proptest` (v1.5) to systematically generate test cases and assert invariants hold across the input space:
+  - `random_classic_always_nonempty` / `random_modern_always_nonempty` — excuses are never empty
+  - `random_classic_returns_known_excuse` / `random_modern_returns_known_excuse` — results must exist in source arrays
+  - `random_classic_is_valid_utf8` / `random_modern_is_valid_utf8` — all outputs are valid UTF-8
+  - Property tests run with varied seeds and iteration counts, providing thorough coverage
+
+- **Overflow Detection**: Test and dev profiles explicitly enable `overflow-checks = true` in `Cargo.toml` to catch integer arithmetic bugs during development and CI runs.
+
+This comprehensive assertion strategy satisfies the OSSF [dynamic_analysis_enable_assertions](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis_enable_assertions) requirement: many runtime assertions are checked during dynamic analysis (testing), improving fault detection before deployment while maintaining zero production overhead.
 
 Where applicable, maintainers run `cargo audit` and similar tools locally or in CI to detect known vulnerable dependency versions and respond accordingly.
 

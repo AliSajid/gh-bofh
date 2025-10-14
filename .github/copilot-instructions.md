@@ -29,7 +29,8 @@ that make an AI agent immediately productive in this repository.
 
 ## Build / test / lint workflow (explicit)
 - Local quick build: `cargo build`
-- Run tests: `cargo test` (unit + integration). Tests use `sealed_test` and `assert_cmd` — preserve environment expectations.
+- Run tests: `cargo test` (unit + integration + property tests). Tests use `sealed_test`, `assert_cmd`, and `proptest` — preserve environment expectations and don't skip property tests.
+- Run tests with assertions active: `cargo test` (debug_assert! macros are active in test builds; overflow-checks enabled)
 - Benchmarks: `cargo bench --bench excuses_benchmark` (requires nightly or benchmark harness depending on toolchain).
 - Format check (CI): `cargo +nightly fmt --all -- --check` (CI runs `+nightly fmt` — match when reproducing CI).
 - Lint (CI): `cargo clippy -- -D warnings` — clippy is treated as errors in CI.
@@ -45,6 +46,12 @@ that make an AI agent immediately productive in this repository.
 - The library exposes `CLASSIC` and `MODERN` as `pub const` arrays; prefer editing `src/gh_bofh_lib/excuses.rs` to add/remove excuses rather than modifying runtime logic.
 - Random selection uses `rand::rng()` and `IndexedRandom::choose` (see `random_classic` / `random_modern`) — preserve the RNG usage pattern when adding features.
 - Tests sometimes set environment variables via `sealed_test` (see `cli.rs` tests). When writing tests, replicate that pattern rather than manipulating global state.
+- **Assertions and testing patterns**:
+  - Use `debug_assert!` for invariant checks in library code (active in tests, compiled out in release)
+  - Add validation tests for new static data (follow patterns in `lib.rs::tests` module)
+  - Consider property tests with `proptest` for functions that accept varied inputs
+  - All new library functions should include assertions for preconditions/postconditions
+  - Test and dev profiles have `overflow-checks = true` — arithmetic bugs will panic during tests
 
 ## Common edit tasks — examples
 - Add a new modern excuse: edit `src/gh_bofh_lib/excuses.rs`, append to `MODERN`, run `cargo test` and `cargo +nightly fmt --all`.

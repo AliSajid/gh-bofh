@@ -40,8 +40,12 @@ invalid_rust_codeblocks = "deny"  # Ensure that all rust code blocks are valid
 redundant_explicit_links = "deny" # Ensure that all explicit links are necessary
 
 [profile.dev]
-opt-level = 1 # Do not optimize
-debug = true  # Generate debug symbols
+opt-level = 1         # Do not optimize
+debug = true          # Generate debug symbols
+overflow-checks = true # Catch integer overflow in development
+
+[profile.test]
+overflow-checks = true # Catch integer overflow during tests
 
 [profile.release]
 opt-level = 'z'   # Optimize for size
@@ -53,4 +57,5 @@ strip = "symbols" # Strip debug symbols
 [dev-dependencies]
 assert_cmd = "=2.0.17"
 criterion = "=0.7.0"
+proptest = "1.5"
 sealed_test = "=1.1.0"
