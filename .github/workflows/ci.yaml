@@ -157,7 +157,7 @@ jobs:
           gistID: ${{env.GIST_KEY}}
           filename: ${{matrix.os}}-${{matrix.label}}.json
           label: Build
-          namedLogo: ${{matrix.logo}}
+          logoSvg: ${{matrix.logoSvg}}
           message: Succeeded
           color: green
 
