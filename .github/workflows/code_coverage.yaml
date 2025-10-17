@@ -11,24 +11,24 @@ jobs:
     name: Generate Coverage
     runs-on: ubuntu-latest
     container:
-      image: xd009642/tarpaulin:develop-nightly@sha256:0359382ec9dbd6bfe8fe556d97dd7f593d920be3bcb69740b4f8702425db269b
+      image: xd009642/tarpaulin:develop-nightly@sha256:632bd88962dba3ffeea5af60fced4db3f28023022d6e3b4ca15a37ad70000ed7
       options: --security-opt seccomp=unconfined
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
         with:
           egress-policy: audit
       - name: Checkout repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - uses: dtolnay/rust-toolchain@6d653acede28d24f02e3cd41383119e8b1b35921 # nightly
+      - uses: dtolnay/rust-toolchain@0b1efabc08b657293548b77fb76cc02d26091c7e # nightly
         with:
           toolchain: nightly
           components: llvm-tools-preview
 
       - name: Install necessary tools
-        uses: taiki-e/install-action@0005e0116e92d8489d8d96fbff83f061c79ba95a # v2.62.31
+        uses: taiki-e/install-action@59679e24ffb0dbbbc136684eda7fcd21fe9eddea # v2.63.0
         with:
           tool: cargo-llvm-cov,nextest,cargo-tarpaulin
 
@@ -36,7 +36,7 @@ jobs:
         run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
 
       - name: Upload to codecov.io
-        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
+        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
