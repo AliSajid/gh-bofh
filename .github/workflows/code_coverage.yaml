@@ -11,7 +11,7 @@ jobs:
     name: Generate Coverage
     runs-on: ubuntu-latest
     container:
-      image: xd009642/tarpaulin:develop-nightly@sha256:174bd52ecd6b691ad3f3c8f60386e332e7c880a4331ad120bba37df90f6e24cc
+      image: xd009642/tarpaulin:develop-nightly@sha256:5fde618f0db30c8b7be18238362f83821ba62f285984db8ad639a7f5c08f4837
       options: --security-opt seccomp=unconfined
 
     steps:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
-      - uses: dtolnay/rust-toolchain@0f44b27771c32bda9f458f75a1e241b09791b331 # nightly
+      - uses: dtolnay/rust-toolchain@0b1efabc08b657293548b77fb76cc02d26091c7e # nightly
         with:
           toolchain: nightly
           components: llvm-tools-preview
