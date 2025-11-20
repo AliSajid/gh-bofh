@@ -110,14 +110,14 @@ jobs:
 
       - name: Install Rust
         if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-        uses: dtolnay/rust-toolchain@0f44b27771c32bda9f458f75a1e241b09791b331 # master
+        uses: dtolnay/rust-toolchain@0b1efabc08b657293548b77fb76cc02d26091c7e # master
         with:
           toolchain: ${{matrix.rust}}
           components: rustfmt, clippy
 
       - name: Install nightly Rust
         if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
-        uses: dtolnay/rust-toolchain@0f44b27771c32bda9f458f75a1e241b09791b331 # nightly
+        uses: dtolnay/rust-toolchain@0b1efabc08b657293548b77fb76cc02d26091c7e # nightly
         with:
           toolchain: nightly
           components: rustfmt, clippy
