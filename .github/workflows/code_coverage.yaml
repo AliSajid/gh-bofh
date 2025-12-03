@@ -11,7 +11,7 @@ jobs:
     name: Generate Coverage
     runs-on: ubuntu-latest
     container:
-      image: xd009642/tarpaulin:develop-nightly@sha256:d410f525e340f4077b6c75ba0487d7d5665c3061f3a2c85a3524667dda44e98e
+      image: xd009642/tarpaulin:develop-nightly@sha256:aae42a20755dd80b716362724e7e7464d67ca6b98bc4430f0ec8a93ea90bad7e
       options: --security-opt seccomp=unconfined
 
     steps:
@@ -20,7 +20,7 @@ jobs:
         with:
           egress-policy: audit
       - name: Checkout repository
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
       - uses: dtolnay/rust-toolchain@0b1efabc08b657293548b77fb76cc02d26091c7e # nightly
         with:
@@ -28,7 +28,7 @@ jobs:
           components: llvm-tools-preview
 
       - name: Install necessary tools
-        uses: taiki-e/install-action@3575e532701a5fc614b0c842e4119af4cc5fd16d # v2.62.60
+        uses: taiki-e/install-action@92e6dd1c202153a204d471a3c509bf1e03dcfa44 # v2.62.61
         with:
           tool: cargo-llvm-cov,nextest,cargo-tarpaulin
 
