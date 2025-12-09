@@ -11,12 +11,12 @@ jobs:
     name: Generate Coverage
     runs-on: ubuntu-latest
     container:
-      image: xd009642/tarpaulin:develop-nightly@sha256:3dd8f321b073542a9d0bb1556ad01642560b00c4c4c1da9d80bf125a42f898ad
+      image: xd009642/tarpaulin:develop-nightly@sha256:3bd0314adb49eb19d2c4928ddb53577e2578d5b2e3e2249ab9a30c6a9c632953
       options: --security-opt seccomp=unconfined
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@df199fb7be9f65074067a9eb93f12bb4c5547cf2 # v2.13.3
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
         with:
           egress-policy: audit
       - name: Checkout repository
@@ -28,7 +28,7 @@ jobs:
           components: llvm-tools-preview
 
       - name: Install necessary tools
-        uses: taiki-e/install-action@50708e9ba8d7b6587a2cb575ddaa9a62e927bc06 # v2.62.63
+        uses: taiki-e/install-action@7646916979096be288829d3d80a5e43636357a04 # v2.62.65
         with:
           tool: cargo-llvm-cov,nextest,cargo-tarpaulin
 
@@ -36,7 +36,7 @@ jobs:
         run: cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
 
       - name: Upload to codecov.io
-        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
+        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
