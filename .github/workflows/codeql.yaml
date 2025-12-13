@@ -1,0 +1,79 @@
+---
+# SPDX-FileCopyrightText: 2023 - 2025 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+name: CodeQL Analysis
+
+on:
+    push:
+        branches:
+            - main
+            - develop
+    pull_request:
+        branches:
+            - main
+    schedule:
+        # Run at 6:00 AM UTC every Monday
+        - cron: "0 6 * * 1"
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+jobs:
+    analyze:
+        name: Analyze Code
+        runs-on: ubuntu-latest
+        permissions:
+            actions: read
+            contents: read
+            security-events: write
+
+        strategy:
+            fail-fast: false
+            matrix:
+                language: ["rust"]
+
+        steps:
+            - name: Harden Runner
+              uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
+              with:
+                  disable-sudo: true
+                  egress-policy: block
+                  allowed-endpoints: >
+                      github.com:443
+                      api.github.com:443
+                      uploads.github.com:443
+                      objects.githubusercontent.com:443
+                      static.rust-lang.org:443
+                      index.crates.io:443
+                      crates.io:443
+
+            - name: Checkout Repository
+              uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+            - name: Initialize CodeQL
+              uses: github/codeql-action/init@cf84e2b7f1d17bd5a66cc2d1f36fc63fa9e6d53e # v3.28.0
+              with:
+                  languages: ${{ matrix.language }}
+                  # If you wish to specify custom queries, you can do so here or in a config file.
+                  # By default, queries listed here will override any specified in a config file.
+                  # Prefix the list here with "+" to use these queries and those in the config file.
+                  # queries: security-extended,security-and-quality
+
+            - name: Install Rust Toolchain
+              uses: dtolnay/rust-toolchain@0b1efabc08b657293548b77fb76cc02d26091c7e # stable
+              with:
+                  toolchain: stable
+
+            - name: Cache Rust Dependencies
+              uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+
+            - name: Build Project
+              run: cargo build --release --verbose
+
+            - name: Perform CodeQL Analysis
+              uses: github/codeql-action/analyze@cf84e2b7f1d17bd5a66cc2d1f36fc63fa9e6d53e # v3.28.0
+              with:
+                  category: "/language:${{matrix.language}}"
