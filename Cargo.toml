@@ -57,5 +57,5 @@ strip = "symbols" # Strip debug symbols
 [dev-dependencies]
 assert_cmd = "=2.0.17"
 criterion = "=0.7.0"
-proptest = "=1.8.0"
+proptest = "=1.9.0"
 sealed_test = "=1.1.0"
