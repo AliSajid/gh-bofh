@@ -55,7 +55,7 @@ panic = "abort"   # Abort on panic
 strip = "symbols" # Strip debug symbols
 
 [dev-dependencies]
-assert_cmd = "=2.1.1"
+assert_cmd = "=2.1.2"
 criterion = "=0.8.1"
 proptest = "=1.9.0"
 sealed_test = "=1.1.0"
