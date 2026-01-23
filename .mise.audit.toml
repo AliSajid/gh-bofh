@@ -4,4 +4,4 @@
 # SPDX-License-Identifier: MIT
 
 [tools]
-"cargo:cargo-audit" = "0.21.0"
+"cargo:cargo-audit" = "0.22.0"
