@@ -5,6 +5,6 @@
 
 [tools]
 "cargo:mdbook" = "0.4.43"
-"cargo:mdbook-inline-highlighting" = "0.1.0"
+"cargo:mdbook-inline-highlighting" = "1.0.0"
 node = "22.13.0"
 "npm:vercel" = "latest"
