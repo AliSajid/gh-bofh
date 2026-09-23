@@ -21,7 +21,7 @@ This project is a small, local command-line tool that prints randomly selected B
 
 - No sensitive data handling: `gh-bofh` does not collect, store, or transmit personal or sensitive data. All operations occur locally on the user's machine.
 - No network or filesystem I/O: the tool does not perform network requests or read/write files as part of normal operation; output is printed to stdout.
-- Transparent source code: the project is open-source and the codebase can be inspected on GitHub for verification and review.
+- Transparent source code: the project is open-source, and the codebase can be inspected on GitHub for verification and review.
 - Minimal dependencies: the implementation uses a small, well-known set of crates (for example, `clap` for CLI parsing and `rand` for randomness), limiting the third-party attack surface.
 
 ## What users cannot expect
@@ -38,7 +38,7 @@ The project is intended to meet the following core security requirements:
 2. Local execution only: the software must operate entirely on the local machine with no network or filesystem I/O required for normal operation.
 3. Minimal attack surface: the code should use only essential dependencies and avoid unnecessary features that increase risk.
 4. Transparency: source code and documentation should be available so users and reviewers can inspect the implementation and verify behavior.
-5. Implementation constraints: maintain MSRV at 1.85.1 and forbid `unsafe_code`; keep examples valid via rustdoc lints.
+5. Implementation constraints: maintain MSRV at 1.85.1 and forbid `unsafe_code`; keep examples valid via `rustdoc` lints.
 
 ## Rationale and justification
 
@@ -46,27 +46,27 @@ The project is intended to meet the following core security requirements:
 - Limited scope reduces exposure: because the tool is local and does not handle sensitive data, common threat vectors (network, data leakage) are largely out of scope.
 - Open-source review: public code enables community review and discovery of potential issues.
 - Relying on well-maintained crates reduces dependency risk: using widely adopted libraries such as `clap` and `rand` lowers the likelihood of introducing obscure vulnerabilities via dependencies.
-- Explicit implementation constraints (MSRV, `unsafe_code = forbid`, rustdoc lints) keep the codebase within a safer subset of Rust and catch issues early in CI.
+- Explicit implementation constraints (MSRV, `unsafe_code = forbid`, `rustdoc` lints) keep the codebase within a safer subset of Rust and catch issues early in CI.
 
 ## Dynamic analysis and assertion requirements
 
 The project applies dynamic analysis via an automated test suite with comprehensive runtime assertions to satisfy OSSF Best Practices criteria:
 
-### Code coverage (OSSF dynamic_analysis criterion)
+### Code coverage (OSSF `dynamic_analysis` criterion)
 
 - **Tool**: `cargo test` with coverage measurement via `cargo-tarpaulin`
 - **Coverage tracking**: Codecov.io integration in CI (see badge in README)
 - **Threshold**: CI enforces minimum 80% coverage; current coverage is **100%**
 - **Scope**: Tests exercise all CLI argument combinations, environment variable handling, and library functions with varied inputs
 
-### Runtime assertions (OSSF dynamic_analysis_enable_assertions criterion)
+### Runtime assertions (OSSF `dynamic_analysis_enable_assertions` criterion)
 
 The project includes many runtime assertions that are checked during all test runs:
 
 - **Debug assertions in library**: `debug_assert!` macros in `src/gh_bofh_lib/lib.rs` validate:
   - Array invariants: CLASSIC and MODERN arrays are non-empty
   - Data integrity: All excuse strings are valid UTF-8
-  - Active during `cargo test` and dev builds; compiled out in release (zero production overhead)
+  - Active during `cargo test` and `dev` builds; compiled out in release (zero production overhead)
 
 - **CLI contract assertions**: `debug_assert!` in `src/gh_bofh/main.rs::process_choice()` verify:
   - Mutual exclusivity of `--classic` and `--modern` flags
@@ -83,12 +83,12 @@ The project includes many runtime assertions that are checked during all test ru
   - All outputs are valid UTF-8
   - Invariants hold across varied inputs and RNG seeds
 
-- **Overflow detection**: Test and dev profiles enable `overflow-checks = true` in `Cargo.toml` to catch integer arithmetic bugs during development and CI.
+- **Overflow detection**: Test and `dev` profiles enable `overflow-checks = true` in `Cargo.toml` to catch integer arithmetic bugs during development and CI.
 
 This satisfies both OSSF Best Practices requirements:
 
-- [dynamic_analysis](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis) — automated test suite with >80% branch coverage
-- [dynamic_analysis_enable_assertions](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis_enable_assertions) — many runtime assertions checked during dynamic analysis
+- [`dynamic_analysis`](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis) — automated test suite with >80% branch coverage
+- [`dynamic_analysis_enable_assertions`](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis_enable_assertions) — many runtime assertions checked during dynamic analysis
 
 ## Threats out of scope
 

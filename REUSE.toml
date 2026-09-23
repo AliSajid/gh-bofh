@@ -104,3 +104,9 @@ path = ".mise/locks/**/*"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 - 2026 Ali Sajid Imami"
 SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "meta/vale-styles/config/vocabularies/Custom/accept.txt"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 - 2026 Ali Sajid Imami"
+SPDX-License-Identifier = "CC0-1.0"
