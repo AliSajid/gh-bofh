@@ -46,6 +46,12 @@ SPDX-FileCopyrightText = "2024 - 2025 Ali Sajid Imami"
 SPDX-License-Identifier = "MIT AND Apache-2.0"
 
 [[annotations]]
+path = "fuzz/Cargo.lock"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 - 2025 Ali Sajid Imami"
+SPDX-License-Identifier = "MIT AND Apache-2.0"
+
+[[annotations]]
 path = ".secrets.baseline"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 - 2025 Ali Sajid Imami"

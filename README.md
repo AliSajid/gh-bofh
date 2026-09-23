@@ -138,6 +138,15 @@ Run tests:
 cargo test
 ```
 
+Run fuzz tests (requires nightly Rust):
+
+```bash
+cd fuzz
+cargo +nightly fuzz run fuzz_random_classic -- -max_total_time=60
+```
+
+See `fuzz/README.md` and `SECURITY_TESTING.md` for details on fuzzing and property-based testing.
+
 Formatting and linting:
 
 ```bash
@@ -170,6 +179,8 @@ High level architecture and design notes: [ARCHITECTURE.md](ARCHITECTURE.md)
 Security requirements and expectations: [SECURITY_REQUIREMENTS.md](SECURITY_REQUIREMENTS.md)
 
 Security assurance artifacts: [SECURITY_ASSURANCE.md](SECURITY_ASSURANCE.md)
+
+Security testing practices (fuzzing, property testing): [SECURITY_TESTING.md](SECURITY_TESTING.md)
 
 For contributor-facing policies and code of conduct, see [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 

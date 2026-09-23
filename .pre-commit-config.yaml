@@ -40,7 +40,7 @@ repos:
           entry: cargo-toml-lint
           language: system
           types_or: [file, rust]
-          files: "Cargo.toml$"
+          files: "^Cargo.toml$"
           pass_filenames: true
     - repo: https://github.com/commitizen-tools/commitizen
       rev: v4.7.2
