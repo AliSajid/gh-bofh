@@ -41,6 +41,8 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: false
 
       - name: Check changed directories
         id: changed_dirs
@@ -107,6 +109,8 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: false
 
       - name: Install Rust
         if: ${{ needs.check_changed_dirs.outputs.source_changed == 'true' }}
@@ -179,13 +183,13 @@ jobs:
         run: echo "result=${{job.status}}" >> "$GITHUB_OUTPUT"
 
   generate_code_coverage:
-    uses: ./.github/workflows/code_coverage.yaml
+    uses: $/.github/workflows/code_coverage.yaml
     needs: [ci, check_changed_dirs]
     if: ${{needs.check_changed_dirs.outputs.source_changed == 'true'}}
     secrets: inherit # pragma: allowlist secret
 
   get-next-version:
-    uses: ./.github/workflows/get_next_version.yaml
+    uses: $/.github/workflows/get_next_version.yaml
     needs: [ci, check_changed_dirs]
     if: ${{needs.ci.outputs.result == 'success'}}
     secrets: inherit # pragma: allowlist secret
@@ -193,5 +197,5 @@ jobs:
   semantic-release:
     needs: [ci, get-next-version]
     if: ${{needs.get-next-version.outputs.new-release-published == 'true'}}
-    uses: ./.github/workflows/release.yaml
+    uses: $/.github/workflows/release.yaml
     secrets: inherit # pragma: allowlist secret

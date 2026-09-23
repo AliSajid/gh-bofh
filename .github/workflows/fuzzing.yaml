@@ -1,0 +1,44 @@
+---
+# SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+name: Smoke-Test Fuzz Targets
+
+on:
+  push:
+    branches: ["main", "next"]
+  pull_request:
+    branches: ["main", "next"]
+
+jobs:
+  fuzz:
+    runs-on: ubuntu-latest
+
+    env:
+      FUZZ_TIME: 300
+      MISE_ENV: "ci"
+
+    strategy:
+      matrix:
+        include:
+          - fuzz_target: fuzz_random_classic
+          - fuzz_target: fuzz_random_modern
+
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4
+        with:
+          experimental: true
+
+      - run: cargo fuzz build ${{ matrix.fuzz_target }}
+      - run: cargo fuzz run ${{ matrix.fuzz_target }} -- -max_total_time=${{ env.FUZZ_TIME }}
+
+      # Upload fuzzing artifacts on failure for post-mortem debugging.
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: failure()
+        with:
+          name: fuzzing-artifacts-${{ matrix.fuzz_target }}-${{ github.sha }}
+          path: fuzz/artifacts
