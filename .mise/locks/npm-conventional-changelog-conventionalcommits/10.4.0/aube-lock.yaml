@@ -1,0 +1,23 @@
+---
+lockfileVersion: '9.0'
+settings:
+    autoInstallPeers: true
+    excludeLinksFromLockfile: false
+importers:
+    .:
+        dependencies:
+            conventional-changelog-conventionalcommits:
+                specifier: 10.4.0
+                version: 10.4.0
+packages:
+    '@conventional-changelog/template@1.4.0':
+        resolution: {integrity: sha512-aalGyl7dbB5PArRebDIX43ZvBlXrYm9uWzGJ26t+4SzJVPsOuvfILGGbw5X4yX7i50YEmJ8zvbiWnqH/AAnZqg==}
+        engines: {node: '>=22'}
+    conventional-changelog-conventionalcommits@10.4.0:
+        resolution: {integrity: sha512-Rriac6ZrAlVm6cy9Bz4NSp+WMHpwNXoPIYex+HjCgduAVUSbnew29DQjQw0C4g9u3HtSYzGiGY+pdBXAZo+4aA==}
+        engines: {node: '>=22'}
+snapshots:
+    '@conventional-changelog/template@1.4.0': {}
+    conventional-changelog-conventionalcommits@10.4.0:
+        dependencies:
+            '@conventional-changelog/template': 1.4.0

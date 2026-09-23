@@ -8,7 +8,7 @@ resolution-markers = [
 ]
 
 [options]
-exclude-newer = "2026-09-22T07:32:56.052703Z"
+exclude-newer = "2026-09-22T17:24:44.839839Z"
 
 [[package]]
 name = "certifi"
