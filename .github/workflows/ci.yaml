@@ -20,9 +20,12 @@ env:
   RUST_BACKTRACE: 1
   MINIMUM_WAIT: 3
   MAXIMUM_WAIT: 10
+
 permissions:
-  id-token: write
-  attestations: write
+  contents: read
+  # id-token: write
+  # attestations: write
+
 jobs:
   check_changed_dirs:
     runs-on: ubuntu-latest
@@ -186,7 +189,7 @@ jobs:
     uses: $/.github/workflows/code_coverage.yaml
     needs: [ci, check_changed_dirs]
     if: ${{needs.check_changed_dirs.outputs.source_changed == 'true'}}
-    secrets: inherit # pragma: allowlist secret
+    # secrets: inherit # pragma: allowlist secret
 
   get-next-version:
     uses: $/.github/workflows/get_next_version.yaml
@@ -196,6 +199,9 @@ jobs:
 
   semantic-release:
     needs: [ci, get-next-version]
+    permissions:
+      id-token: write
+      attestations: write
     if: ${{needs.get-next-version.outputs.new-release-published == 'true'}}
     uses: $/.github/workflows/release.yaml
     secrets: inherit # pragma: allowlist secret

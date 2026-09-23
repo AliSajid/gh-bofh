@@ -37,24 +37,9 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Configure Node.js
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4
         with:
-          node-version: lts/*
-
-      - name: Cache action npm dependencies
-        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-        id: cache-node-modules
-        with:
-          path: ${{ runner.temp }}/.semantic-release-action_next-release-version/node_modules
-          key: |
-            semantic-release-action/next-release-version-${{ runner.os }}-node-${{ hashFiles('${{ github.action_path }}/package-lock.json') }}
-
-      - name: Install dependencies on cache miss
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: |
-          npm install -g semantic-release semantic-release-export-data
-        shell: bash
+          experimental: true
 
       - name: Get next release version
         id: get-next-version
