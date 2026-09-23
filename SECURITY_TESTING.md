@@ -13,9 +13,9 @@ This document describes the security testing practices used in `gh-bofh`, includ
 
 `gh-bofh` employs multiple layers of automated security testing:
 
-1. **Fuzz Testing** with cargo-fuzz and libFuzzer
-2. **Property-Based Testing** with proptest
-3. **Static Analysis** with CodeQL
+1. **Fuzz Testing** with cargo-fuzz and `libFuzzer`
+2. **Property-Based Testing** with `proptest`
+3. **Static Analysis** with `CodeQL`
 4. **Dependency Auditing** with cargo-audit
 
 ## Fuzzing
@@ -26,7 +26,7 @@ Fuzzing is an automated testing technique that provides random or malformed inpu
 
 ### Fuzz Testing Infrastructure
 
-Located in the `fuzz/` directory, we use [cargo-fuzz](https://github.com/rust-fuzz/cargo-fuzz) with libFuzzer:
+Located in the `fuzz/` directory, we use [cargo-fuzz](https://github.com/rust-fuzz/cargo-fuzz) with `libFuzzer`:
 
 **Fuzz Targets:**
 
@@ -75,9 +75,9 @@ Fuzzing runs automatically in CI:
 
 Property-based testing verifies that functions satisfy specified properties across a wide range of inputs. Instead of writing individual test cases, you define properties that should always hold true.
 
-### Proptest Integration
+### `Proptest` Integration
 
-We use [proptest](https://github.com/proptest-rs/proptest) for property-based testing. Tests are located in `src/gh_bofh_lib/lib.rs` in the `proptests` module.
+We use [`proptest`](https://github.com/proptest-rs/proptest) for property-based testing. Tests are located in `src/gh_bofh_lib/lib.rs` in the `proptests` module.
 
 **Properties We Test:**
 
@@ -102,9 +102,9 @@ PROPTEST_CASES=10000 cargo test proptests
 
 ## Static Analysis
 
-### CodeQL
+### `CodeQL`
 
-We use GitHub's CodeQL for static analysis of the codebase:
+We use GitHub's `CodeQL` for static analysis of the codebase:
 
 - Detects potential security vulnerabilities
 - Identifies code quality issues
@@ -113,7 +113,7 @@ We use GitHub's CodeQL for static analysis of the codebase:
 
 Configuration: `.github/workflows/codeql.yaml`
 
-### Clippy
+### `Clippy`
 
 Rust's official linter runs in CI with warnings-as-errors:
 
@@ -151,13 +151,13 @@ Configuration: `.github/workflows/audit.yaml`
 
 2. **During review:**
    - CI runs all security tests automatically
-   - CodeQL analyzes code changes
+   - `CodeQL` analyzes code changes
    - Fuzzing validates robustness
 
 3. **After merge:**
    - Weekly fuzzing continues
    - Scheduled dependency audits
-   - CodeQL monitors for regressions
+   - `CodeQL` monitors for regressions
 
 ### Reporting Security Issues
 
@@ -214,8 +214,8 @@ We regularly:
 
 - [Rust Fuzz Book](https://rust-fuzz.github.io/book/)
 - [cargo-fuzz Documentation](https://rust-fuzz.github.io/book/cargo-fuzz.html)
-- [proptest Documentation](https://proptest-rs.github.io/proptest/)
-- [CodeQL for Rust](https://codeql.github.com/docs/codeql-language-guides/codeql-for-rust/)
+- [`proptest` Documentation](https://proptest-rs.github.io/proptest/)
+- [`CodeQL` for Rust](https://codeql.github.com/docs/codeql-language-guides/codeql-for-rust/)
 - [Secure Rust Guidelines](https://anssi-fr.github.io/rust-guide/)
 
 ## Contributing

@@ -186,3 +186,8 @@ ltex.*
 
 # Ignore fuzzing coverage files
 fuzz/coverage
+
+# Allow the custom vale vocabulary
+meta/vale-styles/**/*
+!meta/vale-styles/config/
+!meta/vale-styles/config/**/*

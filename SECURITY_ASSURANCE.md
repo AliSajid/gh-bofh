@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 SPDX-License-Identifier: MIT
 -->
 
-# **Assurance Case for gh-bofh**
+# **Assurance Case for `gh-bofh`**
 
 This document provides an assurance case for the `gh-bofh` project, justifying why its security requirements are met. The assurance case includes a description of the threat model, identification of trust boundaries, an argument that secure design principles have been applied, and an argument that common implementation security weaknesses have been countered.
 
@@ -18,16 +18,25 @@ This document provides an assurance case for the `gh-bofh` project, justifying w
 The `gh-bofh` project is a simple command-line tool that generates random BOFH excuses. Given its limited scope and functionality, the threat model is relatively simple. The primary threats include:
 
 1. **Unauthorized Access**:
-   - Threat: An attacker could attempt to modify the software or its dependencies to introduce malicious behavior.
-   - Mitigation: The software is distributed as open-source code, allowing users to inspect and verify its integrity. Dependencies are minimized and well-vetted.
+   - **Threat**: An attacker could attempt to modify the software or its dependencies to introduce malicious behavior.
+   - **Mitigation**:
+        - The software is distributed as open-source code, allowing users to inspect and verify its integrity.
+        - Dependencies are minimized and vetted.
+        - Direct dependencies and indirect build toolchains are pinned to specific versions and stored in a reproducible manner.
 
 2. **Data Privacy Risks**:
-   - Threat: The software could inadvertently collect or expose sensitive user data.
-   - Mitigation: The software does not collect, store, or transmit any user data. All operations are performed locally on the user's machine.
+   - **Threat**: The software could inadvertently collect or expose sensitive user data.
+   - **Mitigation**:
+        - The software does not collect, store, or transmit any user data.
+        - All operations are performed locally on the user's machine.
+        - The software does not contain any telemetry or `phone-home` connections
 
 3. **Code Injection**:
-   - Threat: An attacker could attempt to inject malicious code into the software or its dependencies.
-   - Mitigation: The software uses minimal dependencies (`clap` and `rand`), which are widely used and well-maintained. Input validation is performed by the `clap` library.
+   - **Threat**: An attacker could attempt to inject malicious code into the software or its dependencies.
+   - **Mitigation**:
+        - The software uses minimal dependencies (`clap` and `rand`), which are widely used and well-maintained.
+        - Input validation is performed by the `clap` library.
+        - Additionally, input is parsed into a rust `enum`, before any operation is performed.
 
 ### **Threats out of scope**
 
@@ -74,9 +83,10 @@ The `gh-bofh` project adheres to the following secure design principles:
    - The software is open-source, allowing users to inspect the code and verify its security. This transparency helps build trust and enables community review.
 
 4. **Defense in Depth**:
-   - Although the software is simple, it uses well-established libraries (`clap` and `rand`) that follow secure coding practices. This provides an additional layer of security.
+   - Although the software is simple, it uses well-established libraries (`clap` and `rand`) that follow secure coding practices. Additionally, any update to these dependencies is vetted before upgrading. This provides an additional layer of security.
+
 5. **Implementation Constraints**:
-   - The project enforces MSRV 1.85.1, forbids `unsafe_code`, and applies strict rustdoc lints. These constraints reduce the risk of introducing unsafe patterns and keep examples verifiable in CI.
+   - The project enforces MSRV 1.85.1, forbids `unsafe_code`, and applies strict `rustdoc` lints. These constraints reduce the risk of introducing unsafe patterns and keep examples verifiable in CI.
 
 ---
 
@@ -118,19 +128,19 @@ Related documents:
 - `SECURITY_REQUIREMENTS.md` — security requirements and expectations.
 
 - Continuous Integration: `.github/workflows/ci.yaml` — the CI workflow builds and tests the project across multiple Rust toolchains and platforms, runs formatting and lint checks, and gates releases on successful CI.
-- Toolchain and policy: `Cargo.toml` — lists the project Rust MSRV (`rust-version = "1.85.1"`), dependencies (`clap`, `rand`, `proptest` for testing), and lint rules (forbid `unsafe_code`, deny certain rustdoc errors) which demonstrate intentional safety posture. Profile settings enable `overflow-checks = true` in test and dev builds.
+- Toolchain and policy: `Cargo.toml` — lists the project Rust MSRV (`rust-version = "1.85.1"`), dependencies (`clap`, `rand`, `proptest` for testing), and lint rules (forbid `unsafe_code`, deny certain `rustdoc` errors) which demonstrate intentional safety posture. Profile settings enable `overflow-checks = true` in test and `dev` builds.
 - Dependency lockfile: `Cargo.lock` — records exact dependency versions used during builds, enabling reproducible builds and audits.
 - Tests: `tests/` and crate unit tests — exercise the CLI parsing and core library behavior and are executed by CI (`cargo test`).
 - Release and badge automation: the CI workflow includes steps to publish dynamic build badges and drive the release workflow only when CI passes, reducing the chance of publishing untested code.
 
 **Dynamic Analysis and Assertions (OSSF Compliance)**:
 
-- **Code Coverage**: The project maintains 100% code coverage via automated test suite, measured using `cargo-tarpaulin` and reported to [Codecov.io](https://codecov.io/gh/AliSajid/gh-bofh). This satisfies the OSSF [dynamic_analysis](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis) requirement (>80% branch coverage).
+- **Code Coverage**: The project maintains 100% code coverage via automated test suite, measured using `cargo-tarpaulin` and reported to [Codecov.io](https://codecov.io/gh/AliSajid/gh-bofh). This satisfies the OSSF [d`ynamic_analysis`](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis) requirement (>80% branch coverage).
 
 - **Runtime Assertions**: The codebase includes extensive `debug_assert!` macros in library functions (`src/gh_bofh_lib/lib.rs`) and CLI processing (`src/gh_bofh/main.rs`) that validate:
   - Array invariants: CLASSIC and MODERN arrays are non-empty
   - Data integrity: All excuse strings are valid UTF-8
-  - Function contracts: Preconditions (mutual exclusivity of flags) and postconditions (valid ExcuseType returned)
+  - Function contracts: Preconditions (mutual exclusivity of flags) and Postconditions (valid `ExcuseType` returned)
   - These assertions are **active during all test runs** but compiled out in release builds (zero production overhead)
 
 - **Test-Specific Assertions**: Dedicated test functions validate static data integrity:
@@ -145,9 +155,9 @@ Related documents:
   - `random_classic_is_valid_utf8` / `random_modern_is_valid_utf8` — all outputs are valid UTF-8
   - Property tests run with varied seeds and iteration counts, providing thorough coverage
 
-- **Overflow Detection**: Test and dev profiles explicitly enable `overflow-checks = true` in `Cargo.toml` to catch integer arithmetic bugs during development and CI runs.
+- **Overflow Detection**: `test` and `dev` profiles explicitly enable `overflow-checks = true` in `Cargo.toml` to catch integer arithmetic bugs during development and CI runs.
 
-This comprehensive assertion strategy satisfies the OSSF [dynamic_analysis_enable_assertions](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis_enable_assertions) requirement: many runtime assertions are checked during dynamic analysis (testing), improving fault detection before deployment while maintaining zero production overhead.
+This comprehensive assertion strategy satisfies the OSSF [`dynamic_analysis_enable_assertions`](https://bestpractices.coreinfrastructure.org/en/criteria#dynamic_analysis_enable_assertions) requirement: many runtime assertions are checked during dynamic analysis (testing), improving fault detection before deployment while maintaining zero production overhead.
 
 Where applicable, maintainers run `cargo audit` and similar tools locally or in CI to detect known vulnerable dependency versions and respond accordingly.
 
@@ -155,7 +165,7 @@ Where applicable, maintainers run `cargo audit` and similar tools locally or in 
 
 ## **7. Verification checklist**
 
-The following checklist captures the verification activities that should be performed regularly to maintain the assurance case. Each item maps to repository artefacts or CI actions listed in the Evidence section.
+The following checklist captures the verification activities that should be performed regularly to maintain the assurance case. Each item maps to repository artifacts or CI actions listed in the Evidence section.
 
 Automated checks (run in CI on every push/PR):
 
@@ -183,9 +193,9 @@ Maintainers should record verification outcomes in issue trackers or release not
 
 ## **Appendix — Evidence excerpts & verification commands**
 
-The snippets below are direct, representative excerpts from repository artefacts called out in the Evidence section. They are included to make it easy to locate the exact configuration used by the project.
+The snippets below are direct, representative excerpts from repository artifacts called out in the Evidence section. They are included to make it easy to locate the exact configuration used by the project.
 
-Cargo.toml (toolchain and policy excerpts):
+### Toolchain and policy excerpts from `Cargo.toml`
 
 ```toml
 [package]
@@ -199,20 +209,27 @@ rand = { version = "0.9.0" }
 unsafe_code = "forbid"
 ```
 
-CI workflow (representative job / step names present in `.github/workflows/ci.yaml`):
+### CI Workflow
 
+These are the representative job and step names present in `.github/workflows/ci.yaml`
+
+```yaml
 - check_changed_dirs
 - ci (matrix build)
   - Cargo Build
   - Cargo Test
   - Cargo Format
   - Cargo Lint
+```
 
-Dependency lockfile:
+### Dependency Lockfile
 
 - `Cargo.lock` is present in the repository and records the exact pinned dependency versions used during builds and audits.
+- `mise.lock` is present in the repository and records the exact pinned toolchain and support tool versions for verifiable builds.
 
-Explicit verification commands (these are the commands referenced in the Verification checklist and are reproducible locally):
+### Explicit Verification Commands
+
+These are the commands referenced in the Verification checklist and are reproducible locally.
 
 ```bash
 # build
@@ -231,21 +248,18 @@ cargo clippy -- -D warnings
 cargo audit --file Cargo.lock
 ```
 
-Include the output or a short summary in the related issue or PR when addressing a finding so reviewers can confirm the verification step was completed.
-
-Cargo-audit guidance
-
+### `cargo-audit` Guidance
 
 The project uses `cargo-audit` as the primary tool to detect known vulnerable dependency versions. The guidance below covers installation, running the audit, interpreting results, and recommended actions when an advisory is reported.
 
-Installation
+#### Installation
 
 ```bash
 # install cargo-audit (requires Rust and cargo)
 cargo install cargo-audit
 ```
 
-Run an audit
+#### Run an Audit
 
 ```bash
 # basic audit using the repository lockfile
@@ -255,23 +269,23 @@ cargo audit --file Cargo.lock
 cargo audit --file Cargo.lock --json > cargo-audit-report.json
 ```
 
-Interpreting results
+#### Interpreting Results
 
-- `cargo-audit` checks `Cargo.lock` against the RustSec advisory database and reports advisories with severity and CVE references (when available).
+- `cargo-audit` checks `Cargo.lock` against the [RustSec advisory database](https://rustsec.org/) and reports advisories with severity and CVE references (when available).
 - A typical report lists the vulnerable crate, advisory ID, version ranges affected, and suggested remediation (upgrade to a fixed version or apply a patch).
 
-Recommended actions on findings
+#### Recommended Actions on Findings
 
 1. If an advisory indicates a direct dependency is vulnerable, update the `Cargo.toml` to a safe version and run `cargo update -p <crate>` to update `Cargo.lock`. Open a PR with the change and include the audit report.
 2. If the issue is in a transitive dependency, prefer to update the dependent direct crate to a version that pulls a safe transitive version. If no fix is available, consider raising an issue with the upstream project or applying a temporary patch (with caution).
 3. For high/critical advisories treat remediation as urgent; include the audit report in the issue and reference the advisory IDs.
 
-Recording and communicating results
+#### Recording and Communicating Results
 
-- Attach the `cargo-audit` output (text or JSON) to the related issue or PR so reviewers can confirm the finding and remediation.
+- Attach the `cargo-audit` output (text or JSON) to the related issue or PR, so reviewers can confirm the finding and remediation.
 - For automated workflows, include the JSON report in CI artifacts when available and link it from the release notes or security issue.
 
-Notes
+#### Notes
 
 - `cargo-audit` relies on the RustSec advisory database; it does not detect zero-day or unpublished vulnerabilities. Use it regularly as part of dependency hygiene.
 - Consider running `cargo-audit` locally before creating dependency changes and include the report as part of the PR description.

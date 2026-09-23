@@ -29,7 +29,7 @@ The design keeps runtime logic minimal in the binary and concentrates domain dat
 ### Library: `gh_bofh_lib`
 
 - Public data:
-  - `pub const CLASSIC: [&str; N]` and `pub const MODERN: [&str; M]` in `src/gh_bofh_lib/excuses.rs` expose immutable, compile‑time constant lists of excuses. These are part of the public API so other crates can inspect or iterate them if needed.
+  - `pub const CLASSIC: [&str; N]` and `pub const MODERN: [&str; M]` in `src/gh_bofh_lib/excuses.rs` expose immutable, compile‑time constant lists of excuses. These are part of the public API, so other crates can inspect or iterate them if needed.
 
 - Public functions (in `src/gh_bofh_lib/lib.rs`):
   - `pub fn random_classic() -> &'static str`
@@ -38,7 +38,7 @@ The design keeps runtime logic minimal in the binary and concentrates domain dat
 
 - Invariants and properties:
   - No I/O, no global state, and no environment dependency. The functions are pure in the sense that they only depend on RNG state and internal constants.
-  - Memory safety is enforced (no `unsafe`), and doctests verify example usage. Lints for rustdoc are configured to keep docs accurate.
+  - Memory safety is enforced (no `unsafe`), and `doctests` verify example usage. Lints for `rustdoc` are configured to keep docs accurate.
 
 ### Binary: `gh-bofh`
 
@@ -117,7 +117,7 @@ sequenceDiagram
 - `clap` (CLI parsing): used with `derive` and `env` features to type‑check options and bind `EXCUSE_TYPE`.
 - `rand`: uses `rand::rng()` and `IndexedRandom::choose` to pick an item from a static slice.
 - MSRV (Minimum Supported Rust Version): 1.85.1 (enforced in CI). The code avoids features newer than MSRV.
-- Safety: `unsafe_code = "forbid"` (see `Cargo.toml`) and strict rustdoc lints; examples compile and run in doctests.
+- Safety: `unsafe_code = "forbid"` (see `Cargo.toml`) and strict `rustdoc` lints; examples compile and run in `doctests`.
 
 ## Non‑functional properties
 
@@ -134,9 +134,9 @@ sequenceDiagram
 
 ## Testing and verification
 
-- Unit tests in `src/gh_bofh/cli.rs` verify CLI parsing and env handling using `sealed_test` for scoped environment variables.
+- Unit tests in `src/gh_bofh/cli.rs` verify CLI parsing and `env` handling using `sealed_test` for scoped environment variables.
 - Library tests in `src/gh_bofh_lib/lib.rs` sanity‑check that random functions do not return fallback messages.
-- Doctests in `lib.rs` ensure API usage examples compile and execute.
+- `Doctests` in `lib.rs` ensure API usage examples compile and execute.
 
 ## Extension points and evolution
 
@@ -175,6 +175,6 @@ graph TD
 - `src/gh_bofh/cli.rs` — CLI schema (`Cli`, `ExcuseType`) and parsing tests.
 - `src/gh_bofh/main.rs` — entrypoint, `process_choice`, stdout output.
 - `src/gh_bofh_lib/excuses.rs` — static excuse lists (`CLASSIC`, `MODERN`).
-- `src/gh_bofh_lib/lib.rs` — public API, random selection, doctests and unit tests.
+- `src/gh_bofh_lib/lib.rs` — public API, random selection, `doctests` and unit tests.
 
 This architecture intentionally keeps the core pure and the CLI minimal, making the project easy to test, extend, and maintain.
