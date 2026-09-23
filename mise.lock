@@ -150,63 +150,120 @@ checksum = "sha256:DA3B3C6ABCC4BE33158C7CA65B88B0F957570AFA1D97CC75DAA082C45498B
 url = "https://github.com/EmbarkStudios/cargo-about/releases/download/0.6.6/cargo-about-0.6.6-x86_64-pc-windows-msvc.tar.gz"
 url_api = "https://api.github.com/repos/EmbarkStudios/cargo-about/releases/assets/207556334"
 
+[[tools."github:xd009642/tarpaulin"]]
+version = "0.37.4"
+backend = "github:xd009642/tarpaulin"
+specifiers = [
+    "0.37.4",
+    "latest",
+]
+
+[tools."github:xd009642/tarpaulin"."platforms.linux-arm64"]
+checksum = "sha256:e4e9d5556a5ea9667257717ff7824b455d6da122c3107c39321d400bed8bf1e6"
+url = "https://github.com/xd009642/tarpaulin/releases/download/0.37.4/cargo-tarpaulin-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/xd009642/tarpaulin/releases/assets/578664871"
+
+[tools."github:xd009642/tarpaulin"."platforms.linux-arm64-musl"]
+checksum = "sha256:4f833fdb070e80f85d482d194dab20cc63c0faafc544b8802bdb02953d9041f1"
+url = "https://github.com/xd009642/tarpaulin/releases/download/0.37.4/cargo-tarpaulin-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/xd009642/tarpaulin/releases/assets/578664403"
+
+[tools."github:xd009642/tarpaulin"."platforms.linux-x64"]
+checksum = "sha256:0b74a387da7f3da36c21c9bb56de9d716a7edfab5bd63e41dfe8011220f835f0"
+url = "https://github.com/xd009642/tarpaulin/releases/download/0.37.4/cargo-tarpaulin-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/xd009642/tarpaulin/releases/assets/578666763"
+
+[tools."github:xd009642/tarpaulin"."platforms.linux-x64-musl"]
+checksum = "sha256:21c6c5a8e3e0aa18fd1ef5e6960c424b882d09bcd96061de96011b120b98f750"
+url = "https://github.com/xd009642/tarpaulin/releases/download/0.37.4/cargo-tarpaulin-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/xd009642/tarpaulin/releases/assets/578666344"
+
+[tools."github:xd009642/tarpaulin"."platforms.macos-arm64"]
+checksum = "sha256:49c6cbcfc3033e71f2972568f3c6e4014424953788df245cecdadac54e4577e6"
+url = "https://github.com/xd009642/tarpaulin/releases/download/0.37.4/cargo-tarpaulin-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/xd009642/tarpaulin/releases/assets/578667951"
+
+[tools."github:xd009642/tarpaulin"."platforms.macos-x64"]
+checksum = "sha256:022a12cfba4aebbf6e9e7356990475dc42ccba27da1d15b89ed20481df8b6fe6"
+url = "https://github.com/xd009642/tarpaulin/releases/download/0.37.4/cargo-tarpaulin-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/xd009642/tarpaulin/releases/assets/578666914"
+
+[tools."github:xd009642/tarpaulin"."platforms.windows-x64"]
+checksum = "sha256:9b9df85b45a6fc87c51064f451c51f8caa8d1477d06b02c07e28e7d6982e18ab"
+url = "https://github.com/xd009642/tarpaulin/releases/download/0.37.4/cargo-tarpaulin-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/xd009642/tarpaulin/releases/assets/578667542"
+
 [[tools.node]]
-version = "22.14.0"
+version = "22.23.2"
 backend = "core:node"
-specifiers = ["22.14.0"]
+specifiers = [
+    "22",
+    "22.23.2",
+]
 
 [tools.node."platforms.linux-arm64"]
-checksum = "sha256:8cf30ff7250f9463b53c18f89c6c606dfda70378215b2c905d0a9a8b08bd45e0"
-url = "https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-arm64.tar.gz"
+checksum = "sha256:013b59cfd2819703a6f4a14ab891fc46fc2a4e3f5bcd92de3fb4929b43e35b30"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-linux-arm64.tar.gz"
 
 [tools.node."platforms.linux-arm64-musl"]
-checksum = "sha256:6c4e31ed5702dc45cfd8c435af56a36a474427e1bd7afe74c346136060beba8a"
-url = "https://nodejs.org/dist/v22.14.0/node-v22.14.0.tar.gz"
-install = "source"
+checksum = "sha256:b7a1a2b1c7c76e47550f17764676939840e0a64b4d04bdd375a4ac14bccaa8d8"
+url = "https://unofficial-builds.nodejs.org/download/release/v22.23.2/node-v22.23.2-linux-arm64-musl.tar.gz"
 
 [tools.node."platforms.linux-x64"]
-checksum = "sha256:9d942932535988091034dc94cc5f42b6dc8784d6366df3a36c4c9ccb3996f0c2"
-url = "https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-x64.tar.gz"
+checksum = "sha256:b294a556e639d64338823920e5866c21c02741742d2e1529ee1a225c1ec9252a"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-linux-x64.tar.gz"
 
 [tools.node."platforms.linux-x64-musl"]
-checksum = "sha256:6b50f327fd5053b5e4ba67de4bf93aa23653d8a9de39bd6f905f839069c7933d"
-url = "https://unofficial-builds.nodejs.org/download/release/v22.14.0/node-v22.14.0-linux-x64-musl.tar.gz"
+checksum = "sha256:396e11ee609eb2e5cb990f045c4d037aa47b2c247f3cecb01c5c162e33ffa9af"
+url = "https://unofficial-builds.nodejs.org/download/release/v22.23.2/node-v22.23.2-linux-x64-musl.tar.gz"
 
 [tools.node."platforms.macos-arm64"]
-checksum = "sha256:e9404633bc02a5162c5c573b1e2490f5fb44648345d64a958b17e325729a5e42"
-url = "https://nodejs.org/dist/v22.14.0/node-v22.14.0-darwin-arm64.tar.gz"
+checksum = "sha256:61130f394c1630d211dd50aecc4353d379480f36d3ac913cd85dbba1aed585c6"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-darwin-arm64.tar.gz"
 
 [tools.node."platforms.macos-x64"]
-checksum = "sha256:6698587713ab565a94a360e091df9f6d91c8fadda6d00f0cf6526e9b40bed250"
-url = "https://nodejs.org/dist/v22.14.0/node-v22.14.0-darwin-x64.tar.gz"
+checksum = "sha256:58e99022c2ff89395576cc7fd4d98cea24bb68081475d5f88b801ee8729fb026"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-darwin-x64.tar.gz"
 
 [tools.node."platforms.windows-x64"]
-checksum = "sha256:55b639295920b219bb2acbcfa00f90393a2789095b7323f79475c9f34795f217"
-url = "https://nodejs.org/dist/v22.14.0/node-v22.14.0-win-x64.zip"
+checksum = "sha256:1177b4137ba5adaa56354ae40f1080c7450e8ae09cecb47da459d1c52ac99f97"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-win-x64.zip"
 
 [[tools."npm:conventional-changelog-conventionalcommits"]]
-version = "8.0.0"
-aube = { path = ".mise/locks/npm-conventional-changelog-conventionalcommits/8.0.0", digest = "sha256:bb498f955a8417b0e190b5dea763e7b9de09dc3cfb551fce85a70a33875545b6" }
+version = "10.4.0"
+aube = { path = ".mise/locks/npm-conventional-changelog-conventionalcommits/10.4.0", digest = "sha256:2c0aef57bd8d8456e9b5e9d963afcf095f69bd7511aea0d53a9bfdab1ecfd97a" }
 backend = "npm:conventional-changelog-conventionalcommits"
-specifiers = ["8.0.0"]
+specifiers = [
+    "10.4.0",
+    "latest",
+]
 
 [[tools."npm:semantic-release"]]
-version = "24.2.1"
-aube = { path = ".mise/locks/npm-semantic-release/24.2.1", digest = "sha256:9489ac9f4f37043503e7155a7b90659ee42587c45f08ac26d365622a409b1a8c" }
+version = "24.2.9"
+aube = { path = ".mise/locks/npm-semantic-release/24.2.9", digest = "sha256:81c63e8292f0f59b52018d2a0889224b0af414119b9149c89030e496c41fb568" }
 backend = "npm:semantic-release"
-specifiers = ["24.2.1"]
+specifiers = [
+    "24",
+    "24.2.9",
+]
 
 [[tools."npm:semantic-release-export-data"]]
-version = "1.1.0"
-aube = { path = ".mise/locks/npm-semantic-release-export-data/1.1.0", digest = "sha256:5b57a13ee894bc387055cd75092ba8035bf95e7ed5f5b22fc77f9139f797ab65" }
+version = "1.2.0"
+aube = { path = ".mise/locks/npm-semantic-release-export-data/1.2.0", digest = "sha256:3724adaf71c955c4a5f4848b8e9fcb4b652829ea17b3478f7b0cc890c48409fd" }
 backend = "npm:semantic-release-export-data"
-specifiers = ["1.1.0"]
+specifiers = [
+    "1.2.0",
+    "latest",
+]
 
 [[tools."npm:vercel"]]
-version = "59.23.2"
-aube = { path = ".mise/locks/npm-vercel/59.23.2", digest = "sha256:ace9e8f5f6b1cd73b247f5f24e80d758b5b02216aaf78e4108f28399beb82292" }
+version = "59.25.2"
+aube = { path = ".mise/locks/npm-vercel/59.25.2", digest = "sha256:a1d66d35da80c186cb473525a9fec1825a6ca974052f609adde0177be381cce2" }
 backend = "npm:vercel"
-specifiers = ["latest"]
+specifiers = [
+    "59.25.2",
+    "latest",
+]
 
 [[tools."pipx:detect-secrets"]]
 version = "1.5.0"
@@ -215,7 +272,7 @@ specifiers = [
     "1.5.0",
     "latest",
 ]
-uv = { path = ".mise/locks/pipx-detect-secrets/1.5.0", digest = "sha256:cee3715553e50286819e9af4bd9bca91cb96ba1293cbdc78ba9677a730c1d218" }
+uv = { path = ".mise/locks/pipx-detect-secrets/1.5.0", digest = "sha256:de6eedd7daecf3c0f51407e924b5088e0763d465793a69dd638f13bdf25d9e6b" }
 
 [[tools.rust]]
 version = "stable"
@@ -229,7 +286,10 @@ profile = "default"
 [[tools.uv]]
 version = "0.12.17"
 backend = "aqua:astral-sh/uv"
-specifiers = ["latest"]
+specifiers = [
+    "0.12.17",
+    "latest",
+]
 
 [tools.uv."platforms.linux-arm64"]
 checksum = "sha256:d636d1b678e9e7f367ecb22b46bd1cabbed234d6bc3b4d96365d2b507f72f86c"

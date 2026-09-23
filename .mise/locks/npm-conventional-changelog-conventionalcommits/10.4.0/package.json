@@ -1,6 +1,6 @@
 {
     "dependencies": {
-        "vercel": "59.23.2"
+        "conventional-changelog-conventionalcommits": "10.4.0"
     },
     "name": "mise-npm-install",
     "private": true
