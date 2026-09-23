@@ -1,0 +1,7 @@
+{
+    "dependencies": {
+        "conventional-changelog-conventionalcommits": "8.0.0"
+    },
+    "name": "mise-npm-install",
+    "private": true
+}

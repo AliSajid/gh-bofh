@@ -1,12 +1,13 @@
+#:schema https://reuse.software/reuse-toml-v1.schema.json
 # SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
 #
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-License-Identifier: MIT
 
 version = 1
-SPDX-PackageName = "aaprop"
+SPDX-PackageName = "gh-bofh"
 SPDX-PackageSupplier = "Ali Sajid Imami <Ali.Sajid.Imami@gmail.com>"
-SPDX-PackageDownloadLocation = "https://github.com/AliSajid/aaprop"
+SPDX-PackageDownloadLocation = "https://github.com/AliSajid/gh-bofh"
 
 [[annotations]]
 path = ".gitignore"
@@ -16,6 +17,12 @@ SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
 path = ".gitleaksignore"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 - 2025 Ali Sajid Imami"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "mise.lock"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 - 2025 Ali Sajid Imami"
 SPDX-License-Identifier = "CC0-1.0"
@@ -84,4 +91,10 @@ SPDX-License-Identifier = "CC0-1.0"
 path = "OSSMETADATA"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 - 2025 Ali Sajid Imami"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ".mise/locks/**/*"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 - 2026 Ali Sajid Imami"
 SPDX-License-Identifier = "CC0-1.0"
