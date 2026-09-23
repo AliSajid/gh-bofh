@@ -27,6 +27,7 @@ rust = { version = "stable", profile = "default", components = [
 "npm:vercel" = "latest"
 node = "22.14.0"
 "pipx:detect-secrets" = "1.5.0"
+uv = "0.12.17"
 
 [tasks.coverage]
 description = "Generate test coverage information"
