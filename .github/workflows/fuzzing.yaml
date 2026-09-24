@@ -20,6 +20,7 @@ jobs:
 
     env:
       FUZZ_TIME: 300
+      MISE_ENV: "fuzz"
 
     strategy:
       matrix:

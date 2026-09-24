@@ -193,6 +193,49 @@ checksum = "sha256:9b9df85b45a6fc87c51064f451c51f8caa8d1477d06b02c07e28e7d6982e1
 url = "https://github.com/xd009642/tarpaulin/releases/download/0.37.4/cargo-tarpaulin-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/xd009642/tarpaulin/releases/assets/578667542"
 
+[[tools.gitleaks]]
+version = "8.30.1"
+backend = "aqua:gitleaks/gitleaks"
+specifiers = [
+    "8.30.1",
+    "latest",
+]
+
+[tools.gitleaks."platforms.linux-arm64"]
+checksum = "sha256:e4a487ee7ccd7d3a7f7ec08657610aa3606637dab924210b3aee62570fb4b080"
+url = "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/gitleaks/gitleaks/releases/assets/378332057"
+
+[tools.gitleaks."platforms.linux-arm64-musl"]
+checksum = "sha256:e4a487ee7ccd7d3a7f7ec08657610aa3606637dab924210b3aee62570fb4b080"
+url = "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/gitleaks/gitleaks/releases/assets/378332057"
+
+[tools.gitleaks."platforms.linux-x64"]
+checksum = "sha256:551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb"
+url = "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz"
+url_api = "https://api.github.com/repos/gitleaks/gitleaks/releases/assets/378332058"
+
+[tools.gitleaks."platforms.linux-x64-musl"]
+checksum = "sha256:551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb"
+url = "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz"
+url_api = "https://api.github.com/repos/gitleaks/gitleaks/releases/assets/378332058"
+
+[tools.gitleaks."platforms.macos-arm64"]
+checksum = "sha256:b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5"
+url = "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/gitleaks/gitleaks/releases/assets/378332059"
+
+[tools.gitleaks."platforms.macos-x64"]
+checksum = "sha256:dfe101a4db2255fc85120ac7f3d25e4342c3c20cf749f2c20a18081af1952709"
+url = "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_x64.tar.gz"
+url_api = "https://api.github.com/repos/gitleaks/gitleaks/releases/assets/378332053"
+
+[tools.gitleaks."platforms.windows-x64"]
+checksum = "sha256:d29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e"
+url = "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_windows_x64.zip"
+url_api = "https://api.github.com/repos/gitleaks/gitleaks/releases/assets/378333178"
+
 [[tools.node]]
 version = "22.23.2"
 backend = "core:node"
@@ -231,16 +274,25 @@ url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-win-x64.zip"
 
 [[tools."npm:conventional-changelog-conventionalcommits"]]
 version = "10.4.0"
-aube = { path = ".mise/locks/npm-conventional-changelog-conventionalcommits/10.4.0", digest = "sha256:2c0aef57bd8d8456e9b5e9d963afcf095f69bd7511aea0d53a9bfdab1ecfd97a" }
+aube = { path = ".mise/locks/npm-conventional-changelog-conventionalcommits/10.4.0", digest = "sha256:ab993fadc9091ff1171396bc66a82c87a7a681fd85aecab43f136600d48e5559" }
 backend = "npm:conventional-changelog-conventionalcommits"
 specifiers = [
     "10.4.0",
     "latest",
 ]
 
+[[tools."npm:renovate"]]
+version = "44.30.3"
+aube = { path = ".mise/locks/npm-renovate/44.30.3~aa673d8d", digest = "sha256:617ce70ab4cd51d69162868c43cac9fa2928b0a6ad6da1dc1a193780913de7bc" }
+backend = "npm:renovate"
+specifiers = ["latest"]
+
+[tools."npm:renovate".options]
+trust_policy_excludes = '["@yarnpkg/libzip@3.2.2"]'
+
 [[tools."npm:semantic-release"]]
 version = "24.2.9"
-aube = { path = ".mise/locks/npm-semantic-release/24.2.9", digest = "sha256:81c63e8292f0f59b52018d2a0889224b0af414119b9149c89030e496c41fb568" }
+aube = { path = ".mise/locks/npm-semantic-release/24.2.9", digest = "sha256:9f7eaa360b416f38c314c849d1df11b7513b23bec07ffcb598f6deaae0f9384e" }
 backend = "npm:semantic-release"
 specifiers = [
     "24",
@@ -249,7 +301,7 @@ specifiers = [
 
 [[tools."npm:semantic-release-export-data"]]
 version = "1.2.0"
-aube = { path = ".mise/locks/npm-semantic-release-export-data/1.2.0", digest = "sha256:3724adaf71c955c4a5f4848b8e9fcb4b652829ea17b3478f7b0cc890c48409fd" }
+aube = { path = ".mise/locks/npm-semantic-release-export-data/1.2.0", digest = "sha256:64cc075525197d21b8895b6e1ec54628d21c04ba97e61f64fb5a18f9dbaa7d24" }
 backend = "npm:semantic-release-export-data"
 specifiers = [
     "1.2.0",
@@ -258,21 +310,12 @@ specifiers = [
 
 [[tools."npm:vercel"]]
 version = "59.25.2"
-aube = { path = ".mise/locks/npm-vercel/59.25.2", digest = "sha256:a1d66d35da80c186cb473525a9fec1825a6ca974052f609adde0177be381cce2" }
+aube = { path = ".mise/locks/npm-vercel/59.25.2", digest = "sha256:0810192ab50fc77c5f385acf0ab281834d90f7dd4ad85ff61a3a2507635c2281" }
 backend = "npm:vercel"
 specifiers = [
     "59.25.2",
     "latest",
 ]
-
-[[tools."pipx:detect-secrets"]]
-version = "1.5.0"
-backend = "pipx:detect-secrets"
-specifiers = [
-    "1.5.0",
-    "latest",
-]
-uv = { path = ".mise/locks/pipx-detect-secrets/1.5.0", digest = "sha256:de6eedd7daecf3c0f51407e924b5088e0763d465793a69dd638f13bdf25d9e6b" }
 
 [[tools.rust]]
 version = "stable"
