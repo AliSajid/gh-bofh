@@ -12,8 +12,8 @@ SPDX-License-Identifier: MIT
 `gh-bofh` is a small local CLI that prints a randomly selected excuse. Its runtime behavior is intentionally minimal:
 
 - Input surface: command-line arguments and a single environment variable `EXCUSE_TYPE` (mirrors `--type`).
-- Output only to stdout; no network I/O and no filesystem writes as part of normal operation.
-- Implementation constraints: MSRV is 1.85.1 and `unsafe_code` is forbidden; strict rustdoc lints keep examples accurate.
+- Output only to _stdout_; no network I/O and no filesystem writes as part of normal operation.
+- Implementation constraints: MSRV is 1.85.1 and `unsafe_code` is forbidden; strict `rustdoc` lints keep examples accurate.
 
 For a high-level view of components and trust boundaries, see `ARCHITECTURE.md`.
 
@@ -34,7 +34,7 @@ To report a vulnerability, email [security@imamiland.com](mailto:security@imamil
 
 - Steps to reproduce the issue.
 - A clear description of the security impact.
-- Any suggested fixes or mitigations, if you have them.
+- Any suggested fixes or mitigation, if you have them.
 
 You should receive an acknowledgement of your report within 48 hours.
 
@@ -59,8 +59,8 @@ The following threats are out of scope for `gh-bofh` based on its architecture a
 
 For additional context and operational guidance, see:
 
-- `SECURITY_REQUIREMENTS.md` — security requirements and expectations for the project.
-- `SECURITY_ASSURANCE.md` — assurance case and verification checklist describing how security requirements are met and verified.
-- `ARCHITECTURE.md` — high-level design, component boundaries, and data/control flows.
+- [`SECURITY_REQUIREMENTS.md`](SECURITY_REQUIREMENTS.md) — security requirements and expectations for the project.
+- [`SECURITY_ASSURANCE.md`](SECURITY_ASSURANCE.md) — assurance case and verification checklist describing how security requirements are met and verified.
+- [`ARCHITECTURE.md`](ARCHITECTURE.md) — high-level design, component boundaries, and data/control flows.
 
 Maintainers regularly run `cargo audit` against `Cargo.lock` to detect known vulnerable dependency versions. If your report relates to a dependency advisory, please include any relevant `cargo-audit` output (text or JSON) to help triage the issue more quickly.

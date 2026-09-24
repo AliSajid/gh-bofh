@@ -9,21 +9,21 @@ repos:
       hooks:
         - id: fmt
           name: Rust format
-          entry: cargo +nightly fmt --all
+          entry: mise run format-check
           language: system
           types: [rust]
           files: \.rs$
           pass_filenames: false
         - id: clippy
           name: Run clippy linter
-          entry: cargo +nightly clippy --all-targets --all-features -- -D warnings
+          entry: mise run lint
           language: system
           types: [rust]
           files: \.rs$
           pass_filenames: false
         - id: cargo-check
           name: Run cargo check
-          entry: cargo +nightly check --all-targets --all-features
+          entry: cargo check --all-targets --all-features
           language: system
           types: [rust]
           files: \.rs$
@@ -40,7 +40,7 @@ repos:
           entry: cargo-toml-lint
           language: system
           types_or: [file, rust]
-          files: "Cargo.toml$"
+          files: "^Cargo.toml$"
           pass_filenames: true
     - repo: https://github.com/commitizen-tools/commitizen
       rev: v4.7.2
@@ -113,14 +113,6 @@ repos:
           args:
             - --ignore
             - CHANGELOG.md
-    - repo: https://github.com/Yelp/detect-secrets
-      rev: v1.5.0
-      hooks:
-        - id: detect-secrets
-          args:
-            - "--baseline"
-            - ".secrets.baseline"
-          exclude: "meta/licenses.*"
     - repo: https://github.com/sirosen/texthooks
       rev: 0.6.8
       hooks:

@@ -108,6 +108,7 @@ Open a PR from a fork, include a clear description, link to any related issues, 
 - Code style: `rustfmt` via `cargo fmt`.
 - Linting: `cargo clippy` (`-D warnings` in CI).
 - Tests: `cargo test`.
+- Fuzzing: `cargo +nightly fuzz run <target>` (see `fuzz/README.md`).
 - Dependency audits: run `cargo audit` and attach output to PRs that modify dependencies.
 
 Suggested pre-PR checklist:
@@ -115,6 +116,7 @@ Suggested pre-PR checklist:
 1. Run `cargo test` and ensure all tests pass.
 2. Run `cargo +nightly fmt --all` and `cargo clippy -- -D warnings`.
 3. If you changed dependencies run `cargo audit --file Cargo.lock` and include the report.
+4. For library changes, consider running fuzz tests locally (see `fuzz/README.md`).
 
 ### Commit messages
 

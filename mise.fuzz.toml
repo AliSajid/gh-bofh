@@ -1,0 +1,17 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+# SPDX-FileCopyrightText: 2024 - 2025 Ali Sajid Imami
+#
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
+
+[tools]
+rust = { version = "nightly", profile = "default", components = [
+    "rust-analyzer",
+    "rust-src",
+    "llvm-tools",
+] }
+"cargo:cargo-fuzz" = "0.13.1"
+
+[settings]
+experimental = true
+lockfile = true
