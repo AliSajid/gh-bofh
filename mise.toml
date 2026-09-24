@@ -25,7 +25,7 @@ rust = { version = "stable", profile = "default", components = [
 "npm:semantic-release" = "24.2.9"
 "npm:semantic-release-export-data" = "1.2.0"
 "npm:vercel" = "59.25.2"
-node = "22.23.2"
+node = "24.21.0"
 uv = "0.12.17"
 "github:xd009642/tarpaulin" = "0.37.4"
 gitleaks = "8.30.1"
