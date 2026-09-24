@@ -18,7 +18,7 @@ rust = { version = "stable", profile = "default", components = [
 "cargo:cargo-fuzz" = "0.13.1"
 "cargo:cargo-toml-lint" = "0.1.1"
 "cargo:cross" = "0.2.5"
-"cargo:mdbook" = "0.4.43"
+"cargo:mdbook" = "0.5.4"
 "cargo:mdbook-inline-highlighting" = "0.1.0"
 "cargo:semantic-release-cargo" = "2.4.0"
 "npm:conventional-changelog-conventionalcommits" = "10.4.0"
