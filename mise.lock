@@ -283,7 +283,7 @@ specifiers = [
 
 [[tools."npm:renovate"]]
 version = "44.30.3"
-aube = { path = ".mise/locks/npm-renovate/44.30.3~aa673d8d", digest = "sha256:617ce70ab4cd51d69162868c43cac9fa2928b0a6ad6da1dc1a193780913de7bc" }
+aube = { path = ".mise/locks/npm-renovate/44.30.3~aa673d8d", digest = "sha256:4ad5207e9d9071c298484fbd0bd266b8d371a7f296ba1dbc765efef232c2e30d" }
 backend = "npm:renovate"
 specifiers = ["latest"]
 
