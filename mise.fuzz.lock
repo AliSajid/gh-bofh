@@ -8,7 +8,7 @@ backend = "cargo:cargo-fuzz"
 specifiers = ["0.13.1"]
 
 [[tools.rust]]
-version = "nightly-2026-09-24"
+version = "nightly-2026-09-26"
 backend = "core:rust"
 specifiers = ["nightly"]
 
