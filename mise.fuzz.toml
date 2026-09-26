@@ -10,7 +10,7 @@ rust = { version = "nightly", profile = "default", components = [
     "rust-src",
     "llvm-tools",
 ] }
-"cargo:cargo-fuzz" = "0.13.1"
+"cargo:cargo-fuzz" = "0.13.2"
 
 [settings]
 experimental = true

@@ -3,9 +3,9 @@
 lockfile_version = 2
 
 [[tools."cargo:cargo-fuzz"]]
-version = "0.13.1"
+version = "0.13.2"
 backend = "cargo:cargo-fuzz"
-specifiers = ["0.13.1"]
+specifiers = ["0.13.2"]
 
 [[tools.rust]]
 version = "nightly-2026-09-24"
