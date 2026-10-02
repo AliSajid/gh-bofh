@@ -306,13 +306,10 @@ specifiers = [
 ]
 
 [[tools."npm:vercel"]]
-version = "59.25.2"
-aube = { path = ".mise/locks/npm-vercel/59.25.2", digest = "sha256:0810192ab50fc77c5f385acf0ab281834d90f7dd4ad85ff61a3a2507635c2281" }
+version = "59.26.0"
+aube = { path = ".mise/locks/npm-vercel/59.26.0", digest = "sha256:3c1d6163f4b8701307e42d6401e9d9b43aebf16c7f46d81ae0c5363b5278b158" }
 backend = "npm:vercel"
-specifiers = [
-    "59.25.2",
-    "latest",
-]
+specifiers = ["59.26.0"]
 
 [[tools.rust]]
 version = "stable"
