@@ -1,7 +1,0 @@
-{
-    "dependencies": {
-        "vercel": "59.25.2"
-    },
-    "name": "mise-npm-install",
-    "private": true
-}
