@@ -20,7 +20,7 @@ rust = { version = "stable", profile = "default", components = [
 "cargo:cross" = "0.2.5"
 "cargo:mdbook" = "0.5.4"
 "cargo:mdbook-inline-highlighting" = "0.1.0"
-"cargo:semantic-release-cargo" = "2.4.0"
+"cargo:semantic-release-cargo" = "2.4.84"
 "npm:conventional-changelog-conventionalcommits" = "10.4.0"
 "npm:semantic-release" = "24.2.9"
 "npm:semantic-release-export-data" = "1.2.0"
