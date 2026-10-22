@@ -106,9 +106,9 @@ backend = "cargo:mdbook-inline-highlighting"
 specifiers = ["0.1.0"]
 
 [[tools."cargo:semantic-release-cargo"]]
-version = "2.4.0"
+version = "2.4.84"
 backend = "cargo:semantic-release-cargo"
-specifiers = ["2.4.0"]
+specifiers = ["2.4.84"]
 
 [[tools."github:EmbarkStudios/cargo-about"]]
 version = "0.6.6"
